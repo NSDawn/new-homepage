@@ -1,15 +1,27 @@
 ---
 ---
 <div class="os-style">
-    <div class="window">
+    <div class="window window-style">
         <div class="title">
-            <h1>HHEHEHEHE</h1>
+            <h1>Woah there, cybersurfer!</h1>
+            <div class="x-button button-style disabled" role="button">
+                <img src="/assets/img/icons/x.svg" alt="">
+            </div>
         </div>
-        
+        <div class="content">
+            <img src="/assets/img/question.gif" alt="">
+            <div class="blurb">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolores blanditiis harum reiciendis, quas omnis repellat hic unde. Animi nesciunt hic atque eveniet itaque quae, perspiciatis assumenda sint suscipit officia.
+            <div>
+        </div>
+        <div class="buttons">
+            <button class="button-style">I accept</button>
+            <button class="button-style disabled">Cancel</button>
+        </div>
     </div>
 </div>
 <style>
-
+    
     .os-style {
         --rgb-os-bg: #e3e3e3;
         --rgb-os-bg-highlight: #ffffff;
@@ -22,15 +34,31 @@
         --os-font-family: "Times New Roman";
         color: var(--rgb-os-text-color);
         font-family: var(--os-font-family);
-        & div.window { 
-            padding: 0.25rem;
+        & .window-style {
             background-color: var(--rgb-os-bg);
             border: var(--rgb-os-bg-highlight) var(--os-border-width) inset;
+        }
+        & .button-style {
+            background-color: var(--rgb-os-bg);
+            border:  var(--os-border-width) var(--rgb-os-bg-highlight) outset;
+            &.disabled {
+                background-color: var(--rgb-os-bg);
+                border:  var(--os-border-width) var(--rgb-os-bg-highlight) inset;
+
+                cursor: not-allowed;
+        
+            }
+        }
+        & div.window { 
+            padding: 0.25rem;
 
             & div.title {
                 background-color: var(--rgb-os-accent);
                 display: flex;
-                
+                align-items: center;
+                min-width: 20rem;  
+                padding: 0 0.25rem;
+                white-space: nowrap;
                 & h1 {
                     all: unset;
                     display: block;
@@ -41,19 +69,46 @@
                     text-shadow: none;
                     font-weight: 100;
                     color: var(--rgb-os-text-off-color);
-                }   
-                & a {
-                    background-color: var(--rgb-os-bg); 
-                    border: var(--rgb-os-bg-highlight) var(--os-border-width) inset;
-                    border-radius: 0.25rem;
-                    width: 1rem;
+                }  
+                & .x-button {
+                    user-select: none;
+                    margin-left: auto;
+                    width: 0.75rem; 
+                    height: 0.75rem;
                     aspect-ratio: 1;
+                    display:flex; align-items: center; justify-content: center;
+                    & img {
+                        width: 1rem;
+                    }
+                }
+            }
+            & div.content {
+                padding: 0.5rem 0.5rem;
+                display: flex; 
+                justify-content: center; align-items: center; gap: 0.5rem;
+                & img {
+                    width: 5rem;
+                    height: 5rem;
+               }
+               & div.blurb {
+                    max-width: 20rem;
+                    font-size: 0.75rem
+               }
+
+            }
+            & div.buttons {
+                padding: 0.5rem 0.5rem;
+                display: flex; 
+                justify-content: center; align-items: center; gap: 0.5rem;
+                & > button {
+                    border-radius: 0;
+                    width: 5rem;
                     padding: 0.25rem;
-                    display: flex;
-                    align-items: center; justify-content: center;
+                    text-align: center;
                 }
             }
             
         }
+        
     }
 </style>

@@ -16,15 +16,15 @@ import { t } from 'astro-i18n'
     </div>
     <div class="contact mail">
         <img data-copytext="nishant.suria@gmail.com" src="/assets/img/icons/mail.svg" role="button" alt="">
-        <span>nishant.suria(at)gmail.com</span>
+        <a>nishant.suria(at)gmail.com</a>
     </div>
     <div class="contact linkedin">
         <img data-copytext="https://www.linkedin.com/in/nishant-suria/" src="/assets/img/icons/link.svg" role="button" alt="">
-        <span>linkedin.com/in/nishant-suria/</span>
+        <a>linkedin.com/in/nishant-suria/</a>
     </div>
     <div class="contact github">
         <img data-copytext="https://github.com/NSDawn" src="/assets/img/icons/link.svg" alt="">
-        <span>github.com/NSDawn</span>
+        <a>github.com/NSDawn</a>
     </div>
     
 </div>
@@ -75,8 +75,13 @@ div.business-card {
         font-size: 0.75rem;
         & img {
             width: 1rem;
+            cursor: pointer;
+        }
+        & a {
+            cursor: alias;
             &:hover {
-                cursor: pointer;
+                color: var(--rgb-circle);
+                text-decoration: underline var(--rgb-circle) 0.05rem;
             }
         }
     }

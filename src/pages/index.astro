@@ -15,16 +15,16 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 	<section class="card intro">
 		<div class="banners">
 			<a href="https://en.wikipedia.org/wiki/World_Wide_Web">
-				<img src="/assets/img/banners/www.gif" alt="">
+				<img src="/assets/img/banners/www.gif" alt="banner gif displaying World Wide Web">
 			</a>
 			<a href="https://www.w3schools.com/html/">
-				<img src="/assets/img/banners/no-ai.png" alt="">
+				<img src="/assets/img/banners/no-ai.png" alt="banner gif displaying site created without AI">
 			</a>
 			<a href="https://en.wikipedia.org/wiki/CSS">
-				<img src="/assets/img/banners/css.gif" alt="">
+				<img src="/assets/img/banners/css.gif" alt="banner gif displaying made with CSS">
 			</a>
-			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
-				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			<a href="https://astro.build/">
+				<img src="/assets/img/banners/astro.gif" alt="banner gif displaying astro">
 			</a>
 			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
 				<img src="/assets/img/banners/lemon.gif" alt="">
@@ -56,7 +56,9 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 			<BusinessCard />
 		</div>
 	</section>
-	<OsError />
+	<section class="os-error">
+		<OsError />
+	</section>
 	<section class="card">
 		<div class="banners">
 			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
@@ -157,26 +159,11 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 <style is:global>
 main {
 	height: 100vh;
-	overflow: scroll;
+	width: 100vw;
+	overflow: hidden scroll;
 	scrollbar-width: none;
-	& > * {
-		margin: 1rem 0rem;
-	}
-}
-nav {
-	
-	display: flex;
-	gap: 1rem;
-	& > * {
-		font-family: Audiowide;
-
-		background: linear-gradient(to bottom, var(--rgb-radical-magenta), var(--rgb-radical-orange));
-		padding: 1rem;
-		font-size: 2rem;
-		text-shadow: var(--rgb-bg) 0.05em 0.05em;
-		&:hover {
-			transform: scale(1.1);
-		}
+	& > section {
+		margin: 1rem 0;
 	}
 }
 & h1, h2, h3, h4 {
@@ -198,6 +185,10 @@ section.title {
 	display: flex; align-items: center; justify-content: center;
 	animation: float 15s infinite linear;
 }
+section.os-error {
+	display: flex;
+	align-items: center; justify-content: center;
+}
 div.banners {
 	width: 100vw;
 	display: flex;
@@ -209,7 +200,6 @@ section.card {
 	background-color: var(--rgb-bg-card);
 	text-shadow: var(--rgb-bg) 0.05em 0.05em;
 	padding: 1rem;
-	box-shadow: var(--rgb-bg-card) 0 0 5vh;
 	position: relative;
 	& h2 {
 		font-size: 2rem;
