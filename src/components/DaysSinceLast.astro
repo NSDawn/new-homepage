@@ -1,0 +1,67 @@
+---
+interface Props {
+  date: Date;
+  subtitle: string;
+}
+const { date, subtitle } = Astro.props;
+---
+<days-since-last class="days-since-last" data-date={date}>
+    <div class="number">
+        
+    </div>
+    <div class="subtitle">
+        {subtitle}
+    </div>
+</days-since-last>
+
+<style>
+days-since-last.days-since-last {
+    --rgb-days-since-last-main: #000000;
+    --rgb-days-since-last-highlight: #e5ff3d;
+    --rgb-days-since-last-text: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 10rem;
+    color: var(--rgb-days-since-last-text);
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    background: repeating-linear-gradient(
+        35deg,
+        var(--rgb-days-since-last-main) 0rem 0.75rem,
+        var(--rgb-days-since-last-highlight) 0.75rem 2.25rem
+    );
+    & > .number {
+        background-color: var(--rgb-days-since-last-main);
+        font-size: 3rem;
+        font-weight: 800;
+        width: 100%;
+        
+        padding-top: 1rem;
+        line-height: 3rem;
+    }
+    & > .subtitle {
+        background-color: var(--rgb-days-since-last-main);
+        font-size: 0.75rem;
+        padding-bottom: 1rem;
+
+        width: 100%;
+    }
+}
+</style>
+
+<script>
+class DaysSinceLast extends HTMLElement {
+    connectedCallback() {
+        const date = this.dataset.date;
+        const numberElem = this.querySelector('.days-since-last > div.number') as HTMLElement;
+        if (!date || !numberElem) return;
+        const dateObj = new Date(date);
+        const now = new Date();
+        const msPerDay = 1000 * 60 * 60 * 24;
+        const daysSince = Math.floor((now.getTime() - dateObj.getTime()) / msPerDay);
+        numberElem.textContent = daysSince.toString();
+    }
+}
+customElements.define('days-since-last', DaysSinceLast);
+</script>

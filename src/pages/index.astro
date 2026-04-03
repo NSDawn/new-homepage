@@ -1,16 +1,250 @@
 ---
-
+import { t } from 'astro-i18n';
+import HomeLayout from "../layouts/HomeLayout.astro";
+import DaysSinceLast from '../components/DaysSinceLast.astro';
+import WikipediaLink from '../components/WikipediaLink.astro';
+import BusinessCard from '../components/BusinessCard.astro';
+import OsError from '../components/OsError.astro';
+import OsStyle from '../auxstyles/OsStyle.astro';
 ---
+<HomeLayout>
+	<OsStyle />
+	<section class="title">
+		<h1>{t("home.h1")}</h1>
+	</section>
+	<section class="card intro">
+		<div class="banners">
+			<a href="https://en.wikipedia.org/wiki/World_Wide_Web">
+				<img src="/assets/img/banners/www.gif" alt="">
+			</a>
+			<a href="https://www.w3schools.com/html/">
+				<img src="/assets/img/banners/no-ai.png" alt="">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/CSS">
+				<img src="/assets/img/banners/css.gif" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
+				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
+				<img src="/assets/img/banners/lemon.gif" alt="">
+			</a>
+			<a href="https://en.wiktionary.org/wiki/https://finance.yahoo.com/quote/GLD/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8">
+				<img src="/assets/img/banners/gold.gif" alt="">
+			</a>
+			<a href="https://en.wiktionary.org/wiki/wug">
+				<img src="/assets/img/banners/wug.gif" alt="">
+			</a>
+			<a href="https://www.growmilkweedplants.com/map?srsltid=AfmBOopKI4SgX2HcgLJ6q9VRLYT4iVnaEJJxi0YrjvK_j_JP-Zn9hCg0">
+				<img src="/assets/img/banners/milkweed.gif" alt="">
+			</a>
+			
+		</div>
+		<div class="intro-wrapper">
+			<div class="blurb">
+				<h2>
+					{t("home.intro.h")}
+				</h2>
+				<p>
+					{t("home.intro.p")}
+				</p>
+				<div class="keep-scrolling">
+					<img src="/assets/img/handmouse.gif" alt="">
+					<div>{t("home.intro.keep-scrolling")}</div>
+				</div>
+			</div>
+			<BusinessCard />
+		</div>
+	</section>
+	<OsError />
+	<section class="card">
+		<div class="banners">
+			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+				<img src="/assets/img/banners/changeling.gif" alt="">
+			</a>
+			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+				<img src="/assets/img/banners/blood-moon.png" alt="">
+			</a>
+			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+				<img src="/assets/img/banners/maru.gif" alt="">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/CSS">
+				<img src="/assets/img/banners/css.gif" alt="">
+			</a>
+			<a href="https://www.w3schools.com/html/">
+				<img src="/assets/img/banners/no-ai.png" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
+				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
+				<img src="/assets/img/banners/lemon.gif" alt="">
+			</a>
+			
+			<a href="https://www.youtube.com/watch?v=T_lC2O1oIew">
+				<img src="/assets/img/banners/plasticlove.gif" alt="">
+			</a>
+			<a href="https://en.wiktionary.org/wiki/https://finance.yahoo.com/quote/GLD/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8">
+				<img src="/assets/img/banners/gold.gif" alt="">
+			</a>
+			<a href="https://en.wiktionary.org/wiki/wug">
+				<img src="/assets/img/banners/wug.gif" alt="">
+			</a>
+			<a href="https://en.wikipedia.org/wiki/World_Wide_Web">
+				<img src="/assets/img/banners/www.gif" alt="">
+			</a>
+			<a href="https://www.growmilkweedplants.com/map?srsltid=AfmBOopKI4SgX2HcgLJ6q9VRLYT4iVnaEJJxi0YrjvK_j_JP-Zn9hCg0">
+				<img src="/assets/img/banners/milkweed.gif" alt="">
+			</a>
+			
+		</div>
+	</section>
+	<!-- 
+	<section class="os-style">
+		<div class="window window1">
+			<div class="title">
+				<h1>A Title Here</h1>
+				<a class="link" href="" role="button">X</a>
+			</div>
+			<p>you have encountered an error.</p>
+		</div>
+	</section>
+	<section>
+		<nav>
+			<button>games</button>
+			<button>projects</button>
+			<button>other</button>
+		</nav>
+	</section>
+	<section class="card">
+		<marquee behavior="" direction="">
+			Tuesday, May 6th 2025 ### 
+			Groundhog Day ### 
+			$GLD -3.4% $SPY +35.5% $GLD -3.4% ### 
+			prices on the rise
+		</marquee>
+	</section>
+	<section class="card">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
+		</p>
+	</section>
+	<section class="card">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
+		</p>
+	</section>
+	<section class="card">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
+		</p>
+		<DaysSinceLast date={new Date(t("home.foraging.days-since.date"))} subtitle={t("home.foraging.days-since.subtitle")} />
+		<WikipediaLink href={t("home.foraging.link.href")} />	
+	</section>
+	<section class="card">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
+		</p>
+	</section>
+	<section class="card">
+		<p>
+			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
+		</p>
+	</section>
+-->
+</HomeLayout>
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style is:global>
+main {
+	height: 100vh;
+	overflow: scroll;
+	scrollbar-width: none;
+	& > * {
+		margin: 1rem 0rem;
+	}
+}
+nav {
+	
+	display: flex;
+	gap: 1rem;
+	& > * {
+		font-family: Audiowide;
+
+		background: linear-gradient(to bottom, var(--rgb-radical-magenta), var(--rgb-radical-orange));
+		padding: 1rem;
+		font-size: 2rem;
+		text-shadow: var(--rgb-bg) 0.05em 0.05em;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+& h1, h2, h3, h4 {
+	text-align: center;
+	font-family: Audiowide;
+	line-height: 1em;
+	margin: 0;
+}
+& h1 {
+	text-shadow: var(--rgb-radical-magenta) 0.02em 0.02em, var(--rgb-radical-orange) -0.02em -0.02em;
+
+	font-size: 6rem;
+	position: sticky;
+	font-family: Audiowide;
+	top: 12.5vw;
+}
+section.title {
+	height: 80vh;
+	display: flex; align-items: center; justify-content: center;
+	animation: float 15s infinite linear;
+}
+div.banners {
+	width: 100vw;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+}
+section.card {
+	background-color: var(--rgb-bg-card);
+	text-shadow: var(--rgb-bg) 0.05em 0.05em;
+	padding: 1rem;
+	box-shadow: var(--rgb-bg-card) 0 0 5vh;
+	position: relative;
+	& h2 {
+		font-size: 2rem;
+		font-family: Audiowide;
+		text-align: left;
+		margin: 1rem 0;
+	}
+	&.intro {
+		& div.intro-wrapper {
+			display: flex; 
+			margin: 1rem 0;
+			flex-direction:row;
+			flex-wrap: wrap;
+			align-items: center; justify-content: center;
+			gap: 1rem;
+			& div.blurb {
+				max-width: 40rem;
+			}
+			& div.keep-scrolling {
+				align-self: end;
+				display:flex; 
+				flex-direction: row; 
+				gap: 1rem; align-items: center; justify-content: left;
+
+				& img {
+					width: 4rem;
+				}
+			}
+		}
+	}
+}
+
+section.os-style {
+	& .window1 {
+		width: 50vw;
+	}
+}
+</style>

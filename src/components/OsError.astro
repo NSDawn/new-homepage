@@ -1,0 +1,59 @@
+---
+---
+<div class="os-style">
+    <div class="window">
+        <div class="title">
+            <h1>HHEHEHEHE</h1>
+        </div>
+        
+    </div>
+</div>
+<style>
+
+    .os-style {
+        --rgb-os-bg: #e3e3e3;
+        --rgb-os-bg-highlight: #ffffff;
+        --rgb-os-bg-shadow: #747575;
+        --rgb-os-accent: #7500f3;
+        --rgb-os-text-color: #000000;
+        --rgb-os-text-off-color: #ffffff;
+
+        --os-border-width: 0.2rem;
+        --os-font-family: "Times New Roman";
+        color: var(--rgb-os-text-color);
+        font-family: var(--os-font-family);
+        & div.window { 
+            padding: 0.25rem;
+            background-color: var(--rgb-os-bg);
+            border: var(--rgb-os-bg-highlight) var(--os-border-width) inset;
+
+            & div.title {
+                background-color: var(--rgb-os-accent);
+                display: flex;
+                
+                & h1 {
+                    all: unset;
+                    display: block;
+                    position: static;
+                    padding: 0.25rem;
+                    font-size: 1rem;
+                    font-family: var(--os-font-family);
+                    text-shadow: none;
+                    font-weight: 100;
+                    color: var(--rgb-os-text-off-color);
+                }   
+                & a {
+                    background-color: var(--rgb-os-bg); 
+                    border: var(--rgb-os-bg-highlight) var(--os-border-width) inset;
+                    border-radius: 0.25rem;
+                    width: 1rem;
+                    aspect-ratio: 1;
+                    padding: 0.25rem;
+                    display: flex;
+                    align-items: center; justify-content: center;
+                }
+            }
+            
+        }
+    }
+</style>

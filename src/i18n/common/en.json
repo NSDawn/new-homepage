@@ -1,0 +1,33 @@
+{
+	"debugText": "SOME DEBUG TEXT",
+	"common": {
+		"lang": "en"
+	},
+	"home": {
+		"h1": "NS Dawn",
+		"webp-title": "NS Dawn: Home",
+		"intro": {
+			"h": "hiii, i'm NISHANT~~",
+			"p": "I'm a linguist, game designer, and front end developer, and also lots of other things. Welcome to my new homepage.",
+			"keep-scrolling":  "↓↓ Keep scrolling, bestie! ↓↓"
+		},
+		"foraging": {
+			"p": "lorem ipsum i love foragneign neifaoem wafmeaodmewf e",
+			"days-since": {
+				"date": "May 11 2025 17:00:00 GMT-0700 (Pacific Daylight Time)",
+				"subtitle": "days since I ate something random I found"
+			},
+			"link" : {
+				"title": "Redwood sorrel",
+				"href": "https://en.wikipedia.org/wiki/Oxalis_oregana"
+			}
+			
+		}
+	},
+	"business-card": {
+		"h2": "Nishant",
+		"h3": "Suria",
+		"titles": "Front-end Developer | Research Linguist | Game Designer | Urban Farmer | Home Cook | Unofficial Financial Advisor | Language Enthusiast | Intermediate Skier"
+	}
+
+}

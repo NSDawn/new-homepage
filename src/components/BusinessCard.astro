@@ -1,0 +1,148 @@
+---
+import { t } from 'astro-i18n'
+---
+<div class="business-card">
+    <div class="decoration">
+        <div class="circle"></div>
+        <div class="square"></div>
+        <div class="logo">
+            <img src="/assets/img/icons/akatsuki-brightened.png" alt="">
+        </div>
+    </div>
+    <h2>{t("business-card.h2")}</h2>
+    <h3>{t("business-card.h3")}</h3>
+    <div class="titles">
+        <marquee behavior="scroll" scrolldelay=200 direction="">{t("business-card.titles")}</marquee>
+    </div>
+    <div class="contact mail">
+        <img data-copytext="nishant.suria@gmail.com" src="/assets/img/icons/mail.svg" role="button" alt="">
+        <span>nishant.suria(at)gmail.com</span>
+    </div>
+    <div class="contact linkedin">
+        <img data-copytext="https://www.linkedin.com/in/nishant-suria/" src="/assets/img/icons/link.svg" role="button" alt="">
+        <span>linkedin.com/in/nishant-suria/</span>
+    </div>
+    <div class="contact github">
+        <img data-copytext="https://github.com/NSDawn" src="/assets/img/icons/link.svg" alt="">
+        <span>github.com/NSDawn</span>
+    </div>
+    
+</div>
+<style>
+@font-face {
+    font-family: Rajdhani;
+    src: url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf");
+}
+div.business-card {
+    --rgb-black: #000000;
+    --rgb-white: #ffffff;
+    --rgb-circle: #578cff;
+    --rgb-square: #ae57ff;
+    --rgb-clear: #00000000;
+    background-color: var(--rgb-white);
+    width: 20rem;
+    aspect-ratio: 1.75;
+    outline: var(--rgb-black) solid 0.1rem;
+    box-shadow: 0rem 0rem 1rem var(--rgb-white);
+
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column;
+    padding: 1rem;
+    font-family: NotoSans;
+    color: var(--rgb-black);
+    text-shadow: none;
+    & h2, h3 {
+        all: unset; 
+        font-family: Rajdhani; 
+        text-shadow: none;  
+        color: var(--rgb-black);
+    }
+    & h2 {
+        margin-bottom:  -1rem;
+        font-size: 3rem;
+    }
+    & h3 {
+        font-size: 2rem;
+
+        color: var(--rgb-black);
+    }
+    & div.contact {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+        font-size: 0.75rem;
+        & img {
+            width: 1rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    & div.titles {
+        margin: 0.5rem 0;
+    }
+    & div.decoration {
+        overflow: hidden;
+        
+        
+        & .circle {
+            position: absolute;
+            background: linear-gradient(to right, var(--rgb-circle), var(--rgb-clear));
+            right: -1rem;
+            top: 0;
+            width: 5rem;
+            aspect-ratio: 1;
+            border-radius: 50%;
+        }
+        & .square {
+            position: absolute;
+            background: linear-gradient(to right, var(--rgb-square), var(--rgb-clear));
+            transform: rotate(-45deg);
+            right: 0rem;
+            top: 4rem;
+            width: 2.5rem;
+            aspect-ratio: 1;
+        }
+        & .logo {
+            position: absolute;
+            right: 1rem;
+            top: 1rem;
+            & img {
+                width: 3rem;
+            }
+        }
+        
+    }
+}
+</style>
+<script>
+
+const imgButtonElements = document.querySelectorAll("div.business-card div.contact > img")
+for (let el of imgButtonElements) {
+    const originalSrc = el.getAttribute("src") ?? "/assets/img/icons/link.svg"; 
+    el.addEventListener('mouseout', () => {
+        el.setAttribute("src", originalSrc);
+    })
+    el.addEventListener('click', () => {
+        setClipboard(el.getAttribute("data-copytext"));
+        el.setAttribute("src", "/assets/img/icons/check.svg");
+    });
+    el.addEventListener('mouseover', () => {
+        el.setAttribute("src", "/assets/img/icons/copy.svg");
+    })
+
+}
+
+async function setClipboard(text: string | null | undefined) {
+    if (!text) return;
+    const type = "text/plain";
+    const clipboardItemData = {
+        [type]: text,
+    };
+    const clipboardItem = new ClipboardItem(clipboardItemData);
+    await navigator.clipboard.write([clipboardItem]);
+}
+
+</script>

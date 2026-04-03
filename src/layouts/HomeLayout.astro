@@ -1,0 +1,329 @@
+---
+import { t } from 'astro-i18n'
+---
+<html lang={t("common.lang")}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{t("home/webp-title")}</title>
+	</head>
+    <body>
+        <div class="decoration">
+            <div class="decoration-planet a1"></div>
+            <div class="decoration-planet a2">
+                <div class="decoration-feature b1"></div>
+                <div class="decoration-feature b2"></div>
+                <div class="decoration-feature b3"></div>
+                <div class="decoration-feature b4"></div>
+            </div>
+            <div class="decoration-stars">
+                <div class="decoration-planet star b1"></div>
+                <div class="decoration-planet star b2"></div>
+                <div class="decoration-planet star b3"></div>
+                <div class="decoration-planet star b4"></div>
+                <div class="decoration-planet star b5"></div>
+                <div class="decoration-planet star b6"></div>
+            </div>
+            <div class="decoration-text calligraphy a1">無為</div>
+            <div class="decoration-text calligraphy a2">生舊叉燒好過生你</div>
+            <img class="decoration-img hot-dog" src="/assets/img/hot-dog.png" alt="" aria-hidden >
+            <img class="decoration-img statue" src="/assets/img/statue-ajanta.png" alt="" aria-hidden >
+            <img class="decoration-img stunfisk" src="/assets/img/stunfisk.png" alt="" aria-hidden >
+            <img class="decoration-img inuyasha" src="/assets/img/inuyasha.gif" alt="" aria-hidden >
+            <img class="decoration-img cat" src="/assets/img/cat.gif" alt="" aria-hidden >
+            <img class="decoration-img duck-cinni" src="/assets/img/duck-cinni.png" alt="" aria-hidden >
+            <img class="decoration-img shape" src="/assets/img/shape.gif" alt="" aria-hidden >
+            <img class="decoration-img water-lily" src="/assets/img/water-lily.png" alt="" aria-hidden >
+            <img class="decoration-img synergy" src="/assets/img/synergy.png" alt="" aria-hidden >
+            
+        </div>
+        <main>
+            <slot/>
+        </main>
+    </body>
+</html>
+<style is:global>
+@font-face {
+    font-family: NotoSans;
+    src: url("/assets/fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.ttf");
+}
+@font-face {
+    font-family: Audiowide;
+    src: url("/assets/fonts/Audiowide/Audiowide-Regular.ttf");
+}
+img { 
+    image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+    image-rendering: -moz-crisp-edges;          /* Firefox                        */
+    image-rendering: -o-crisp-edges;            /* Opera                          */
+    image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+    image-rendering: pixelated;                 /* Universal support since 2021   */
+    image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+    -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+
+}
+html {
+	--rgb-radical-shadow: #006b02;
+	--rgb-radical-orange: #ffae36;
+	--rgb-radical-yellow: #fff759;
+	--rgb-radical-magenta: #ff49ea;
+	--rgb-radical-magenta-transparent: #ff49eabb;
+	--rgb-radical-green:rgb(77, 255, 119);
+	--rgb-radical-blue: #4d4dff;
+	--rgb-bg: #000104;
+    --rgb-bg-card: #000104;
+	--rgb-text: #ffffff;
+	--rgb-white: #ffffff;
+	--rgb-black: #000000;
+    
+    font-size: 16px;
+	background-color: var(--rgb-bg);
+	color: var(--rgb-text);
+	font-family: NotoSans;
+}
+button {
+    all: unset;
+    border-radius: 0.5em;
+}
+body {
+	background: 
+		linear-gradient(
+			var(--rgb-radical-magenta-transparent),
+			transparent
+		),
+		repeating-conic-gradient(
+			at top,
+			var(--rgb-radical-blue) 0deg 0.5deg,
+			transparent 0.5deg 10deg
+		), 
+		linear-gradient(
+			var(--rgb-radical-blue) 0vw 0.125vw,
+			transparent 0.125vw 2.5vw,
+			var(--rgb-radical-blue) 2.5vw 2.625vw,
+			transparent 2.625vw 5vw,
+			var(--rgb-radical-blue) 5vw 5.25vw,
+			transparent 5.25vw 10vw,
+			var(--rgb-radical-blue) 10vw 10.325vw,
+			transparent 10.325vw 20vw,
+			var(--rgb-radical-blue) 20vw 20.5vw,
+			transparent 20.5vw 40vw,
+			var(--rgb-radical-blue) 40vw 40.75vw,
+			transparent 40.75vw 100vw
+		);
+	background-position: 0 50vh;
+	background-repeat: no-repeat;
+    animation: bg-color 10s infinite;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	margin: 0; padding: 0;
+	align-items: center;
+    z-index: -1;
+    overflow: hidden;
+  
+    & > main {
+        z-index: 0;
+    }
+}
+
+div.decoration-planet {
+	filter: drop-shadow(0vw 0vw 1vw var(--rgb-radical-shadow)) drop-shadow(0vw 10vw 10vw var(--rgb-radical-shadow));
+	border-radius: 50%;
+	position: fixed;
+	aspect-ratio: 1;
+	
+	&.a1 {
+		width: 30vw;
+		left: calc(50vw - 0.5 * 30vw);
+		top: 2vw;
+		background: linear-gradient(to bottom, var(--rgb-radical-magenta), var(--rgb-radical-orange));
+	}
+	&.a2 {
+		width: 5vw;
+		right: 10vw;
+		top: 10vw;
+		overflow: hidden;
+		background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		& > .decoration-feature {
+			position: relative;
+			&.b1 {
+				border-radius: 50%;
+				width: 2vw;
+				aspect-ratio: 1;
+				right: 1vw;
+				background: radial-gradient( var(--rgb-radical-yellow), var(--rgb-radical-orange));
+				top: 1vw;
+				z-index: 3;
+			}
+			&.b2 {
+				border-radius: 50%;
+				width: 2vw;
+				aspect-ratio: 1;
+				right: 0vw;
+				background: radial-gradient( var(--rgb-radical-yellow), var(--rgb-radical-orange));
+				top: 1vw;
+				z-index: 3;
+			}
+			&.b3 {
+
+				border-radius: 50%;
+				width: 2vw;
+				aspect-ratio: 1;
+				right: -2vw;
+				background: radial-gradient( var(--rgb-radical-yellow), var(--rgb-radical-orange));
+				top: -2vw;
+				z-index: 3;
+			}
+			&.b4 {
+				border-radius: 50%;
+				width: 2vw;
+				aspect-ratio: 1;
+				right: -3vw;
+				background: radial-gradient( var(--rgb-radical-yellow), var(--rgb-radical-orange));
+				top: -6vw;
+				z-index: 3;
+			}
+		}
+	}
+	&.star {
+		filter: drop-shadow(0vw 0vw 1vw var(--rgb-radical-shadow)) drop-shadow(0vw 10vw 10vw var(--rgb-radical-shadow));
+		border-radius: 50%;
+		position: fixed;
+		aspect-ratio: 1;
+		&.b1 {
+			width: 0.6vw; right: 8vw; top: 6vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b2 {
+			width: 0.5vw; right: 4vw; top: 5vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b3 {
+			width: 0.7vw; right: 20vw; top: 20vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b4 {
+			width: 0.5vw; right: 30vw; top: 24vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+	}
+}
+img.decoration-img {
+	filter: drop-shadow(0vw 0vw 1vw var(--rgb-radical-shadow));
+	position: fixed;
+	&.hot-dog {
+		left: 1vw;
+		top: 35vh;
+		width: 20vw;
+	}
+	&.stunfisk {
+		right: 30vw;
+		bottom: 13vh;
+		width: 10vw;
+	}
+	&.shape {
+		right: 50vw;
+		bottom: 10vh;
+		width: 10vw;
+        animation: float 10s infinite linear;
+	}
+
+	&.synergy {
+		left: 12vw;
+		top: 70vh;
+		width: 10vw;
+	}
+    &.statue {
+        right: 1vw;
+		top: 35vh;
+		width: 20vw;
+        animation: float 10s infinite linear;
+    }
+    &.water-lily {
+        right: 3vw;
+		top: 65vh;
+		width: 5vw;
+        animation: float 10s infinite linear;
+    }
+	&.inuyasha {
+        right: 15vw;
+		top: 67vh;
+		width: 2vw;
+        animation: float 10s infinite linear;
+    }
+	&.duck-cinni {
+        right: 10vw;
+		top: 74vh;
+		width: 2vw;
+        animation: float 10s infinite linear;
+
+    }
+	&.cat {
+        right: 12vw;
+		top: 64vh;
+		width: 2vw;
+        animation: float 10s infinite linear;
+
+    }
+}
+@keyframes float {
+    0% {
+        transform: translateY(0.5em);
+    }
+    12.5% {
+        transform: translateY(0.35em);
+    }
+    25% {
+        transform: translateY(0em);
+    }
+    37.5% {
+        transform: translateY(-0.35em);
+    }
+    50% {
+        transform: translateY(-0.5em);
+    }
+    62.5% {
+        transform: translateY(-0.35em);
+    }
+    75% {
+        transform: translateY(0em);
+    }
+    87.5% {
+        transform: translateY(0.35em);
+    }
+    100% {
+        transform: translateY(0.5em);
+    }
+}
+@keyframes bg-color {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(15deg);
+    }
+    100% {
+        filter: hue-rotate(0deg);
+    }
+}
+div.decoration-text.calligraphy	{
+	position: fixed;
+	text-shadow: var(--rgb-radical-magenta) 0.02em 0.02em, var(--rgb-radical-orange) -0.02em -0.02em;
+	
+	&.a1 {
+		left: 4vw;
+		top: 23vh;
+		font-size: 10vw;
+	}
+	&.a2 {
+		left: 4vw;
+		top: 55vh;
+		font-size: 5vw;
+		width: 20vw;
+		line-height: 5vw;
+	}
+	
+}
+</style>
