@@ -48,26 +48,33 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 				<p>
 					{t("home.intro.p")}
 				</p>
-				<div class="keep-scrolling">
-					<img src="/assets/img/handmouse.gif" alt="">
-					<div>{t("home.intro.keep-scrolling")}</div>
+				<div class="quick-links">
+					<h3>Quick Links:</h3>
+					<ul>
+						<li><a href="https://nsdawn.dev/linguistics">{t("home.intro.quick-links.linguistics")}</a></li>
+						<li><a href="https://nsdawn.dev/games">{t("home.intro.quick-links.game-dev")}</a></li>
+						<li><a href="https://nsdawn.dev/404">{t("home.intro.quick-links.fun")}</a></li>
+					</ul>
 				</div>
 			</div>
-			<BusinessCard />
+			<div class="keep-scrolling">
+				<img src="/assets/img/handmouse.gif" alt="">
+				<div>{t("home.intro.keep-scrolling")}</div>
+			</div>
 		</div>
 	</section>
-	<section class="os-error">
-		<OsError />
+	<section class="business-card">
+		<BusinessCard />
 	</section>
 	<section class="card">
 		<div class="banners">
 			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
 				<img src="/assets/img/banners/changeling.gif" alt="">
 			</a>
-			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+			<a href="https://scryfall.com/card/2xm/118/blood-moon">
 				<img src="/assets/img/banners/blood-moon.png" alt="">
 			</a>
-			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+			<a href="https://stardewvalleywiki.com/Maru">
 				<img src="/assets/img/banners/maru.gif" alt="">
 			</a>
 			<a href="https://en.wikipedia.org/wiki/CSS">
@@ -100,6 +107,9 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 			</a>
 			
 		</div>
+	</section>
+	<section class="os-error">
+		<OsError />
 	</section>
 	<!-- 
 	<section class="os-style">
@@ -185,6 +195,10 @@ section.title {
 	display: flex; align-items: center; justify-content: center;
 	animation: float 15s infinite linear;
 }
+section.business-card {
+	display: flex;
+	align-items: center; justify-content: center;
+}
 section.os-error {
 	display: flex;
 	align-items: center; justify-content: center;
@@ -217,6 +231,28 @@ section.card {
 			gap: 1rem;
 			& div.blurb {
 				max-width: 40rem;
+				& div.quick-links {
+					& h3 {
+						text-align: left;
+					}
+					& ul {
+						margin: 0.5rem;
+						display: flex;
+						gap: 2rem;
+						& a {
+							all: unset;
+							cursor: alias;
+							&:hover {
+								text-decoration: underline var(--rgb-text) 0.05rem;
+							}
+						}
+						& li {
+							&:hover {
+								transform: scale(1.1);
+							}
+						}
+					}
+				}
 			}
 			& div.keep-scrolling {
 				align-self: end;

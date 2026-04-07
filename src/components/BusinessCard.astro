@@ -16,17 +16,22 @@ import { t } from 'astro-i18n'
     </div>
     <div class="contact mail">
         <img data-copytext="nishant.suria@gmail.com" src="/assets/img/icons/mail.svg" role="button" alt="">
-        <a>nishant.suria(at)gmail.com</a>
+        <a href="mailto:nishant.suria@gmail.com">nishant.suria@gmail.com</a>
     </div>
     <div class="contact linkedin">
         <img data-copytext="https://www.linkedin.com/in/nishant-suria/" src="/assets/img/icons/link.svg" role="button" alt="">
-        <a>linkedin.com/in/nishant-suria/</a>
+        <a href="https://linkedin.com/in/nishant-suria/" target="_blank">linkedin.com/in/nishant-suria/</a>
     </div>
     <div class="contact github">
         <img data-copytext="https://github.com/NSDawn" src="/assets/img/icons/link.svg" alt="">
-        <a>github.com/NSDawn</a>
+        <a href="https://github.com/NSDawn" target="_blank">github.com/NSDawn</a>
     </div>
-    
+    <div class="resume-link">
+        <a href="https://nsdawn.dev/resume">
+            <img src="/assets/img/icons/resume.svg" alt="" />
+            <div>{t("business-card.cv")}</div>
+        </a>
+    </div>
 </div>
 <style>
 @font-face {
@@ -43,7 +48,7 @@ div.business-card {
     width: 20rem;
     aspect-ratio: 1.75;
     outline: var(--rgb-black) solid 0.1rem;
-    box-shadow: 0rem 0rem 1rem var(--rgb-white);
+    box-shadow: 0rem 0rem 0.25rem var(--rgb-white);
 
     display: flex;
     position: relative;
@@ -78,6 +83,7 @@ div.business-card {
             cursor: pointer;
         }
         & a {
+            all: unset;
             cursor: alias;
             &:hover {
                 color: var(--rgb-circle);
@@ -118,7 +124,24 @@ div.business-card {
                 width: 3rem;
             }
         }
-        
+    }
+    & div.resume-link {
+        position: absolute;
+        right: 1rem;
+        bottom: 1rem;
+        cursor: alias;
+        & > a {
+            all:unset;
+            cursor: alias;
+            display: flex;  
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                color: var(--rgb-circle);
+                text-decoration: underline var(--rgb-circle) 0.05rem;
+            }
+        }
     }
 }
 </style>
