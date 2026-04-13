@@ -1,22 +1,33 @@
 ---
+interface Props {
+  title: string;
+  blurb: string;
+  imgSrc: string;
+  buttonTexts: string[];
+  buttonEffects: (string|null)[],
+}
+const { title, blurb, imgSrc, buttonTexts, buttonEffects } = Astro.props;
 ---
 <div class="os-style">
     <div class="window window-style">
         <div class="title">
-            <h1>Woah there, cybersurfer!</h1>
+            <h1>{title}</h1>
             <div class="x-button button-style disabled" role="button">
                 <img src="/assets/img/icons/x.svg" alt="">
             </div>
         </div>
         <div class="content">
-            <img src="/assets/img/question.gif" alt="">
-            <div class="blurb">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est dolores blanditiis harum reiciendis, quas omnis repellat hic unde. Animi nesciunt hic atque eveniet itaque quae, perspiciatis assumenda sint suscipit officia.
+            <img src={imgSrc} alt="error icon">
+            <div class="blurb"> 
+                {blurb}
             <div>
         </div>
         <div class="buttons">
-            <button class="button-style">I accept</button>
-            <button class="button-style disabled">Cancel</button>
+            {buttonTexts.map((buttonText, i) => 
+                <button class="button-style" onclick={buttonEffects[i]}>
+                    {buttonText}
+                </button>
+            )}
         </div>
     </div>
 </div>

@@ -1,21 +1,21 @@
 {
 	"debugText": "SOME DEBUG TEXT",
 	"common": {
-		"lang": "en"
+		"lang": "ja"
 	},
 	"home": {
-		"h1": "NS Dawn",
-		"webp-title": "NS: Home",
+		"h1": "NS暁",
+		"webp-title": "NS暁: ホーム",
 		"intro": {
-			"h": "hiii, i'm NISHANT~~",
+			"h": "やほぉ！　二シャントです~~",
 			"p": "I'm a linguist, game designer, and front end developer, and also lots of other things. Welcome to my new homepage.",
 			"quick-links": {
-				"h": "Quick Links:",
-				"linguistics": "Linguistics",
-				"game-dev": "Game Dev",
-				"fun": "Fun"
+				"h": "便利リンク：",
+				"linguistics": "言語学",
+				"game-dev": "ゲーム開発",
+				"fun": "ほか"
 			},
-			"keep-scrolling":  "↓↓ Keep scrolling, bestie! ↓↓"
+			"keep-scrolling":  "↓↓ スクロ〜ル ↓↓"
 		},
 		"linguistics": {
 			"h": "Linguistics",
@@ -30,10 +30,10 @@
 		}
 	},
 	"business-card": {
-		"h2": "Nishant",
-		"h3": "Suria",
-		"cv": "CV",
-		"titles": "Research Linguist | Front-end Engineer | Game Developer | Educator | Cook | Financial Analyst | Urban Farmer | Forager | Skier | Angler"
+		"h2": "二シャント",
+		"h3": "スーリア",
+		"cv": "履歴書",
+		"titles": "研究言語学者 | フロントエンドエンジニア | ゲーム開発者 | 教育者 | 料理人 | 政治アナリスト | 市内農家 | 採集者 | スキーヤー | 釣り人"
 	}
 
 }

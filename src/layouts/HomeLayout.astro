@@ -1,5 +1,12 @@
 ---
 import { t } from 'astro-i18n'
+
+interface Props {
+  webpTitle?: string;
+  bgElements?: "none" | "bg-only" | "all";
+}
+const { webpTitle, bgElements } = Astro.props;
+
 ---
 <html lang={t("common.lang")}>
 	<head>
@@ -7,10 +14,12 @@ import { t } from 'astro-i18n'
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{t("home.webp-title")}</title>
+		<title>{webpTitle ?? t("home.webp-title")}</title>
 	</head>
     <body>
         <div class="decoration">
+			{ bgElements !== "none" ? 
+			<>
             <div class="decoration-planet a1"></div>
             <div class="decoration-planet a2">
                 <div class="decoration-feature b1"></div>
@@ -26,6 +35,10 @@ import { t } from 'astro-i18n'
                 <div class="decoration-planet star b5"></div>
                 <div class="decoration-planet star b6"></div>
             </div>
+			</>
+			: null}
+			{ bgElements !== "none" && bgElements !== "bg-only" ? 
+			<>
             <div class="decoration-text calligraphy a1">無為</div>
             <div class="decoration-text calligraphy a2">生舊叉燒好過生你</div>
             <img class="decoration-img hot-dog" src="/assets/img/hot-dog.png" alt="" aria-hidden >
@@ -36,8 +49,11 @@ import { t } from 'astro-i18n'
             <img class="decoration-img duck-cinni" src="/assets/img/duck-cinni.png" alt="" aria-hidden >
             <img class="decoration-img shape" src="/assets/img/shape.gif" alt="" aria-hidden >
             <img class="decoration-img water-lily" src="/assets/img/water-lily.png" alt="" aria-hidden >
+            <img class="decoration-img rice-cooker" src="/assets/img/rice-cooker.png" alt="" aria-hidden >
+            <img class="decoration-img immune-to-propaganda" src="/assets/img/immune-to-propaganda.png" alt="" aria-hidden >
             <img class="decoration-img synergy" src="/assets/img/synergy.png" alt="" aria-hidden >
-            
+            </>
+			: null}
         </div>
         <main>
             <slot/>
@@ -236,6 +252,11 @@ img.decoration-img {
 		top: 70vh;
 		width: 10vw;
 	}
+	&.immune-to-propaganda {
+		left: 15vw;
+		top: 75vh;
+		width: 10vw;
+	}
     &.statue {
         right: 1vw;
 		top: 35vh;
@@ -247,6 +268,11 @@ img.decoration-img {
 		top: 65vh;
 		width: 5vw;
         animation: float 10s infinite linear;
+    }
+	&.rice-cooker {
+        right: 22vw;
+		top: 70vh;
+		width: 5vw;
     }
 	&.inuyasha {
         right: 15vw;

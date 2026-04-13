@@ -12,6 +12,11 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
+# non-en locales
+src/pages/es/
+src/pages/fr/
+src/pages/hi/
+src/pages/ja/
 
 # environment variables
 .env

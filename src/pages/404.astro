@@ -1,0 +1,44 @@
+---
+import HomeLayout from "../layouts/HomeLayout.astro";
+---
+<HomeLayout webpTitle="NS: 404" bgElements="bg-only">
+    <section class="main">
+        <h1>404</h1>
+        <h2>not found</h2>
+        <h3>no encontrada | 見つかりません | non trouvée</h3>
+        <a class="go-home" href="https://nsdawn.dev/">
+            <img src="/assets/img/home.png" alt="home link">
+        </a>
+    </section>
+</HomeLayout>
+
+<style>
+section.main {
+    display:flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: center; align-items: center;
+}
+& h1, h2, h3, h4 {
+	text-align: center;
+	font-family: Audiowide;
+	line-height: 1em;
+	margin: 0;
+}
+& h1 {
+	text-shadow: var(--rgb-radical-magenta) 0.02em 0.02em, var(--rgb-radical-orange) -0.02em -0.02em;
+
+	font-size: 6rem;
+	position: sticky;
+	font-family: Audiowide;
+	top: 12.5vw;
+}
+.go-home {
+    & img {
+        width: 4rem;
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+</style>

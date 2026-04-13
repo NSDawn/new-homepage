@@ -6,6 +6,7 @@ import WikipediaLink from '../components/WikipediaLink.astro';
 import BusinessCard from '../components/BusinessCard.astro';
 import OsError from '../components/OsError.astro';
 import OsStyle from '../auxstyles/OsStyle.astro';
+import { formatShortDate } from '../lib/locale'
 ---
 <HomeLayout>
 	<OsStyle />
@@ -49,7 +50,7 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 					{t("home.intro.p")}
 				</p>
 				<div class="quick-links">
-					<h3>Quick Links:</h3>
+					<h3>{t("home.intro.quick-links.h")}</h3>
 					<ul>
 						<li><a href="https://nsdawn.dev/linguistics">{t("home.intro.quick-links.linguistics")}</a></li>
 						<li><a href="https://nsdawn.dev/games">{t("home.intro.quick-links.game-dev")}</a></li>
@@ -66,35 +67,13 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 	<section class="business-card">
 		<BusinessCard />
 	</section>
-	<section class="card">
+	<section class="card linguistics">
 		<div class="banners">
-			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
-				<img src="/assets/img/banners/changeling.gif" alt="">
-			</a>
-			<a href="https://scryfall.com/card/2xm/118/blood-moon">
-				<img src="/assets/img/banners/blood-moon.png" alt="">
-			</a>
-			<a href="https://stardewvalleywiki.com/Maru">
-				<img src="/assets/img/banners/maru.gif" alt="">
-			</a>
-			<a href="https://en.wikipedia.org/wiki/CSS">
-				<img src="/assets/img/banners/css.gif" alt="">
-			</a>
-			<a href="https://www.w3schools.com/html/">
-				<img src="/assets/img/banners/no-ai.png" alt="">
-			</a>
-			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
-				<img src="/assets/img/banners/vocaloid.gif" alt="">
-			</a>
 			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
 				<img src="/assets/img/banners/lemon.gif" alt="">
 			</a>
-			
 			<a href="https://www.youtube.com/watch?v=T_lC2O1oIew">
 				<img src="/assets/img/banners/plasticlove.gif" alt="">
-			</a>
-			<a href="https://en.wiktionary.org/wiki/https://finance.yahoo.com/quote/GLD/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8">
-				<img src="/assets/img/banners/gold.gif" alt="">
 			</a>
 			<a href="https://en.wiktionary.org/wiki/wug">
 				<img src="/assets/img/banners/wug.gif" alt="">
@@ -102,14 +81,46 @@ import OsStyle from '../auxstyles/OsStyle.astro';
 			<a href="https://en.wikipedia.org/wiki/World_Wide_Web">
 				<img src="/assets/img/banners/www.gif" alt="">
 			</a>
+			
+		</div>
+	</section>
+	<section class="os-error">
+		<OsError 
+			title={t("home.os-error.h")} 
+			blurb={t("home.os-error.p")} 
+			imgSrc="/assets/img/question.gif"
+			buttonTexts={[t("home.os-error.button1"), t("home.os-error.button2")]}
+			buttonEffects={[null, null]}
+		/>
+	</section>
+	<section class="card game-dev">
+		<div class="banners">
+			<a href="https://scryfall.com/card/j22/269/amoeboid-changeling">
+				<img src="/assets/img/banners/changeling.gif" alt="">
+			</a>
+			<a href="https://scryfall.com/card/2xm/118/blood-moon">
+				<img src="/assets/img/banners/blood-moon.png" alt="">
+			</a>
+
+			<a href="https://scryfall.com/card/f05/11/counterspell">
+				<img src="/assets/img/banners/in-response.gif" alt="">
+			</a>
+			<a href="https://stardewvalleywiki.com/Maru">
+				<img src="/assets/img/banners/maru.gif" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
+				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			</a>
 			<a href="https://www.growmilkweedplants.com/map?srsltid=AfmBOopKI4SgX2HcgLJ6q9VRLYT4iVnaEJJxi0YrjvK_j_JP-Zn9hCg0">
 				<img src="/assets/img/banners/milkweed.gif" alt="">
 			</a>
 			
 		</div>
 	</section>
-	<section class="os-error">
-		<OsError />
+	<section class="card footer">
+		<div class="last-updated">
+			{formatShortDate(new Date(), t("common.lang"))}
+		</div>
 	</section>
 	<!-- 
 	<section class="os-style">
@@ -204,7 +215,6 @@ section.os-error {
 	align-items: center; justify-content: center;
 }
 div.banners {
-	width: 100vw;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
@@ -247,6 +257,8 @@ section.card {
 							}
 						}
 						& li {
+							list-style: url('/assets/img/cat2.gif') disc;
+							margin: 1rem;
 							&:hover {
 								transform: scale(1.1);
 							}
