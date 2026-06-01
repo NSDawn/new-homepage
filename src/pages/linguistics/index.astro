@@ -1,0 +1,211 @@
+---
+import { t, l } from 'astro-i18n';
+import LingLayout from "../../layouts/LingLayout.astro";
+---
+<LingLayout webpTitle={t("linguistics.webp-title")} title={t("linguistics.h")}>
+    <section class="intro"> 
+        <div class="blurb">
+            <p>
+                {t("linguistics.intro.p")}
+            </p>
+        </div>
+        <div class="portrait">
+            <img src="/assets/img/nishant.png" alt="nishant suria portrait">
+            <div class="label">Nishant Suria</div>
+        </div>
+    </section>
+    <section class="works">
+        <div class="projects">
+            <h3>{t("linguistics.projects.h")}</h3>
+            <ol>
+                {[0, 1, 2, 3, 4].map((n) => 
+                    <li>
+                        <a href={l(t(`linguistics.projects.items.${n}.href`))}><b>{t(`linguistics.projects.items.${n}.title`)}</b></a>
+                        <div>{t(`linguistics.projects.items.${n}.desc`)}</div>
+                        <div><i>{t(`linguistics.projects.items.${n}.topics`)}</i></div>
+                    </li> 
+                )}
+            </ol>
+        </div>
+        <div class="education">
+            <h3>{t("linguistics.education.h")}</h3>
+            <ol>
+                {[0, 1].map((n) => 
+                    <li>
+                        <div><b>{t(`linguistics.education.items.${n}.title`)}</b></div>
+                        <div>{t(`linguistics.education.items.${n}.desc`)}</div>
+                        <div><i>{t(`linguistics.education.items.${n}.date`)}</i></div>
+                    </li> 
+                )}
+            </ol>
+            <h3>{t("linguistics.certs.h")}</h3>
+            <ol>
+                {[0, 1].map((n) => 
+                    <li>
+                        <div><b>{t(`linguistics.certs.items.${n}.title`)}</b></div>
+                        <div><i>{t(`linguistics.certs.items.${n}.date`)}</i></div>
+                    </li> 
+                )}
+            </ol>
+        </div>
+    </section>
+    <section class="further-info">
+        <div class="main-bit">
+            <div class="blurb">
+                <h3>Linguist FAQs</h3>
+            </div>
+            <div class="sidebar">
+                <div class="see-also">
+                    <h3>{t("linguistics.see-also.h")}</h3>
+                    <ol>
+                        {[0, 1].map((n) => 
+                            <li>
+                                <div><a href={l(t(`linguistics.see-also.items.${n}.href`))}><b>{t(`linguistics.see-also.items.${n}.title`)}</b></a></div>
+                                <div><i>{t(`linguistics.see-also.items.${n}.desc`)}</i></div>
+                            </li> 
+                        )}
+                    </ol>
+                </div>
+                <div class="noffles">
+                    <div class="noffle-wrapper">
+                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
+                    </div>
+                    <div>{t("linguistics.noffles.blurbs.0")}</div>
+                    <div class="noffle-wrapper">
+                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
+                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
+                    </div>
+                    <div>{t("linguistics.noffles.blurbs.1")}</div>
+                </div>
+            </div>
+        </div>
+        <div class="banners">
+			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
+				<img src="/assets/img/banners/lemon.gif" alt="lemon banner">
+			</a>
+			<a href="https://www.youtube.com/watch?v=T_lC2O1oIew">
+				<img src="/assets/img/banners/plasticlove.gif" alt="plastic love banner">
+			</a>
+			<a href="https://en.wiktionary.org/wiki/wug">
+				<img src="/assets/img/banners/wug.gif" alt="wug banner">
+			</a>
+			<a href="https://www.youtube.com/watch?v=Fpu5a0Bl8eY&list=RDFpu5a0Bl8eY&start_radio=1">
+				<img src="/assets/img/banners/99luftballons.gif" alt="99 luftballons banner">
+			</a>
+			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
+				<img src="/assets/img/banners/vocaloid.gif" alt="vocaloid banner">
+			</a>
+			<a href="https://www.fon.hum.uva.nl/praat/">
+				<img src="/assets/img/banners/praat.png" alt="praat banner">
+			</a>
+		</div>
+    </section>
+</LingLayout>
+<style>
+    section {
+        &.intro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1rem 0;
+            align-items: center; justify-content: center;
+            & .blurb {
+                flex: 2;
+                min-width: 20rem;
+                & p {
+                    all: unset;
+                    font-size: 1.25rem;
+                }
+            } 
+            & .portrait {
+                flex: 1;
+                text-align: center;
+                & img {
+                    border: var(--rgb-text-linguistics) 0.25rem dotted;
+                    width: max(250px, 20vw);
+                    aspect-ratio: 1;
+                }
+            }
+        }
+        &.works, .see-also {
+            display: flex;
+            gap: 0.5rem; 
+            & > div {
+                outline: 0.1rem var(--rgb-text-linguistics) dashed;
+                padding: 0.5rem;
+                &.projects {
+                    flex: 2;
+                }
+                &.education {
+                    flex: 1;
+                }
+            }
+            & h2, h3 {
+                font-size: 1.25rem;
+            }
+            & ol {
+                list-style-type: devanagari;
+                margin-block-start: 0.5rem;
+                padding-inline-start: 1rem;
+                & li {
+                    margin: 0.5rem;
+                }
+                & a {
+                    all: unset;
+                    color: var(--rgb-a-linguistics);
+                    text-decoration: underline;
+                    cursor: pointer;
+                    display: block;
+                    &:hover {
+                        transform: scale(1.05);
+                    }
+                }
+            }
+        }
+        &.further-info {
+            margin: 0.5rem 0;
+            & .main-bit {
+                display: flex;
+                gap: 0.5rem;
+            }
+            & .blurb {
+                flex: 3;
+            }
+            & .sidebar {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                & > * {
+                    outline: 0.1rem var(--rgb-text-linguistics) dashed;
+                    padding: 0.5rem;  
+                }
+                & .see-also {
+                    display: block; 
+                    
+                }
+                & .noffles {
+                    padding: 1rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                    text-align: center;
+                    & .noffle-wrapper {
+                        display: flex;
+                        justify-content: center; align-items: center;
+                    }
+                }
+            }
+            & .banners {
+                margin: 1rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+           
+        }
+    }
+    h3 {
+        margin: 0.5rem 0;
+    }
+</style>

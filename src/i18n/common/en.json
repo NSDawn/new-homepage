@@ -1,7 +1,8 @@
 {
 	"debugText": "SOME DEBUG TEXT",
 	"common": {
-		"lang": "en"
+		"lang": "en",
+		"lang-display-name": "english"
 	},
 	"home": {
 		"h1": "NS Dawn",
@@ -19,8 +20,7 @@
 		},
 		"linguistics": {
 			"h": "Linguistics",
-			"p": "",
-			"p": ""
+			"go-to": "Check out Linguistics..."
 		},
 		"os-error": {
 			"h": "Woah there, cybersurfer!",
@@ -28,6 +28,112 @@
 			"button1": "Accept",
 			"button2": "Refuse"
 		}
+	},
+	"linguistics" : {
+		"webp-title": "NS: Linguistics",
+		"h": "Linguistics",
+		"intro": {
+			"p": "I'm Nishant Suria [nɪʃɑ̃nt sɹ̩iə], a graduate student in Computational Linguistics at SJSU. The majority of my previous work has been in Phonetics and Phonology, but I'm passionate about the entire breadth of linguistics. My specific interests are in Indic and Dravidian languages, text-to-speech systems, and language contact."
+		},
+		"projects": {
+			"h": "Projects",
+			"items": {
+				"0": {
+					"title": "Acquisition of Sentence-Final Particles across Languages",
+					"desc": "A cross-linguistic investigation of childhood acquisition of Sentence-Final Particles in Mandarin, Japanese, and Vietnamese.",
+					"topics": "Language Acquisition, Grammatical Conservatism (2026)"
+				},
+				"1": {
+					"title": "Vocaloid, VocaloidAI, and Nuances of Singing Voice Synthesis",
+					"desc": "A phonetic and cross-cultural analysis of concatentative and neural singing voice synthesizers, principally Yamaha's VOCALOID.",
+					"topics": "Phonetics, Text-to-Speech Software (2026)"
+				},
+				"2": {
+					"title": "On the Coexistence of Arbitrariness and Iconicity, Evidence from Sign Languages",
+					"desc": "An critical look at the linguistic concept of arbitrariness against the frequency of iconic forms in sign langauges.",
+					"topics": "Phonology, Sign Languages (2025)"
+				},
+				"3": {
+					"title": "A Phonetic Investigation of the Retroflex Approximant in Tamil",
+					"desc": "A phonetic analysis of the Tamil's five distinct liquid consonants, concentrating specifically on /ɻ/, which is gradually merging with /ɭ/ in urban dialects. Pilot study with seven speakers. (Undergraduate Capstone Project)",
+					"topics": "Phonetics, Tamil (2023)"
+				},
+				"4": {
+					"title": "Analysis of Vowel Devioicing in Standard Japanese",
+					"desc": "Applying Optimality Theory to phonological devoicing of vowels, principally high vowels, in Standard Japanese.",
+					"topics": "Phonology, Japanese (2023)"
+				}
+			}
+		},
+		"education": {
+			"h": "Education",
+			"items": {
+				"0": {
+					"title": "MS Computational Linguistics",
+					"desc": "San José State University",
+					"date": "2025 ~ present"
+				},
+				"1": {
+					"title": "BA Language Studies - Japanese",
+					"desc": "University of California, Santa Cruz",
+					"date": "2019 ~ 2023, Cum Laude"
+				}
+			}
+		},
+		"certs": {
+			"h": "Certifications",
+			"items": {
+				"0": {
+					"title": "Japanese Language Proficiency Test N2",
+					"date": "2022"
+				},
+				"1": {
+					"title": "Seal of Biliteracy: French",
+					"date": "2019"
+				}
+			}
+		},
+		"see-also" : {
+			"h": "You may also be looking for...",
+			"items" : {
+				"0": {
+					"title": "Feature Lookup",
+					"desc": "A tool for looking up phonological features",
+					"href": "/feature-lookup"
+				},
+				"1": {
+					"title": "Consonant Phonotactics in the Moenat Variety of Ladin (Walker & Yang 2024)",
+					"desc": "Worked as an undergraduate research assistant on phonological work on a minority Romance language spoken in Southern Italy.",
+					"href": "/redirect/ladin-paper"
+				}
+			}
+		},
+		"noffles": {
+			"blurbs" : {
+				"0": "This is a noffle.",
+				"1": "Now there are two of them. These are two _____."
+			}
+		},
+		"faqs": {
+			"h": "Linguist FAQs",
+			"items": {
+				"0": {
+					"q": "How many languages do you speak?",
+					"a": ""
+				},
+				"1": {
+					"q": "Can you tell my friend that [emerging linguistic feature] is an abberation of language?",
+					"a": "No. Today's slang is tomorrow's grammar."
+				},
+				"2": {
+					"q": "Is Tamil the 'oldest' language?",
+					"a": "This is a nonsensical question. While records of written Old Tamil date back to the 3rd century BCE, this was before the divergence of Tamil from its closest relative, Malayalam (9th century CE). Not only is this Tamil inscrutable to modern speakers, it would be just as apt to call it Old Malayalam instead. Ultimately, Old Tamil itself is theorized to derive from the South branch of Proto-Dravidian."
+				}
+			}
+		}
+	},
+	"lang-dropdown": {
+		"lang-icon": "🌐"
 	},
 	"business-card": {
 		"h2": "Nishant",

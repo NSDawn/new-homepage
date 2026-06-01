@@ -1,0 +1,144 @@
+---
+import { l, t } from 'astro-i18n'
+import LanguageDropdown from '../components/LanguageDropdown.astro';
+
+interface Props {
+  webpTitle?: string;
+  title?: string; 
+}
+const { webpTitle, title } = Astro.props;
+---
+<html lang={t("common.lang")}>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/assets/img/icons/ling-favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{webpTitle ?? t("home.webp-title")}</title>
+	</head>
+    <body>
+        <header>
+            {title ? 
+                <div class="heading-wrapper">
+                    <img class="inline-icon" src="/assets/img/icons/ling-favicon-original.png" alt="noffle icon">
+                    <h1>   
+                        {title}
+                    </h1>
+                    <img class="inline-icon" src="/assets/img/icons/ling-favicon-original.png" alt="noffle icon">
+                </div>
+            : null }
+            <nav>
+                <LanguageDropdown />
+                <a href={l("/")} class="button-like" role="link">
+                    <img src="/assets/img/icons/home-white.svg" alt="home icon" />
+                </a>
+            </nav>
+        </header>
+        <main>
+            <slot />
+        </main>
+        <footer>
+            <a class="icon-link" href="https://github.com/NSDawn" target="_blank">
+                <img src="/assets/img/icons/github-white.svg"  alt="">
+            </a>
+            <a class="icon-link" href="https://www.linkedin.com/in/nishant-suria/" target="_blank">
+                <img src="/assets/img/icons/linkedin-white.svg"  alt="">
+            </a>
+            <a class="icon-link" href="mailto:nishant.suria@gmail.com" target="_blank">
+                <img class="shift-down-a-bit" src="/assets/img/icons/outgoing-mail-white.svg"  alt="">
+            </a>
+        </footer>
+    </body>
+</html>
+<style is:global>
+    html {
+		--rgb-bg-linguistics: #0000c8;
+		--rgb-bg-white: white;
+		--rgb-text-linguistics: #ccccff;
+		--rgb-a-linguistics: #f0ff9a;
+		background-color: var(--rgb-bg-linguistics);
+		font-family: 'Times New Roman', Times, serif;
+		color: var(--rgb-text-linguistics);
+        & nav {
+            display: flex;
+            gap: 1rem;
+            & button, a.button-like {
+                all: unset; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.25em !important;
+                outline: 0.25rem double var(--rgb-text-linguistics) !important;
+                cursor: pointer;
+                &:hover {
+                    transform: scale(1.1);
+                }
+                & img {
+                    aspect-ratio: 1;
+                    width: 1.25rem;
+                }
+            }
+            
+            & .dropdown-wrapper > div.dropdown.language-links {
+                background-color: var(--rgb-bg-linguistics) !important;
+            }
+        }
+        & .heading-wrapper {
+            margin-bottom: 1rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            outline: var(--rgb-text-linguistics) double 0.25rem;
+
+            & h1 {
+                color: var(--rgb-text-linguistics);
+                font-size: 2rem;
+                padding: 0.5rem;;
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                margin: 0.5rem;
+		    }
+            & .inline-icon {
+                width: 3em;
+            }
+        }
+        & h2 {
+            color: var(--rgb-text-linguistics);
+            font-size: 1.5rem; 
+        }
+
+        & footer {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center; align-items: center;
+            gap: 0.5rem;
+            & a.icon-link {
+                all: unset;
+                display: block;
+                cursor: alias;
+                &:hover {
+                    transform: scale(1.1)
+                }
+                & img {
+                    width: 2rem;
+                    &.shift-down-a-bit {
+                        transform: translateY(0.25rem);
+                    }
+                }
+            }
+        }
+        
+	}
+
+    img { 
+        user-select: none;
+        image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
+        image-rendering: -moz-crisp-edges;          /* Firefox                        */
+        image-rendering: -o-crisp-edges;            /* Opera                          */
+        image-rendering: -webkit-optimize-contrast; /* Chrome (and eventually Safari) */
+        image-rendering: pixelated;                 /* Universal support since 2021   */
+        image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
+        -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
+    }
+</style>

@@ -1,7 +1,8 @@
 {
-	"debugText": "SOME DEBUG TEXT",
+	"debugText": "デバッグ用テキスト",
 	"common": {
-		"lang": "ja"
+		"lang": "ja",
+		"lang-display-name": "日本語"
 	},
 	"home": {
 		"h1": "NS暁",
@@ -18,9 +19,9 @@
 			"keep-scrolling":  "↓↓ スクロ〜ル ↓↓"
 		},
 		"linguistics": {
-			"h": "Linguistics",
-			"p": "",
-			"p": ""
+			"h": "言語学",
+			"p": "[niɕant(o) sɯːɾia]と言います。サンノゼ大学で計算言語学の大学院生です。 以前は、私の研究・学習は主に音声学と音韻論に焦点を当てていました。現在は、インド・アーリア語派およびドラヴィダ語派に関心を持っています。",
+			"timeline": "2019 - 2023: University of California, Santa Cruz: BA Language Studies - Japanese\n2025 - present: San Jose State University: MS Computational Linguistics"
 		},
 		"os-error": {
 			"h": "Woah there, cybersurfer!",

@@ -1,11 +1,12 @@
 ---
-import { t } from 'astro-i18n';
+import { l, t } from 'astro-i18n';
 import HomeLayout from "../layouts/HomeLayout.astro";
 import DaysSinceLast from '../components/DaysSinceLast.astro';
 import WikipediaLink from '../components/WikipediaLink.astro';
 import BusinessCard from '../components/BusinessCard.astro';
 import OsError from '../components/OsError.astro';
 import OsStyle from '../auxstyles/OsStyle.astro';
+import LanguageDropdown from '../components/LanguageDropdown.astro';
 import { formatShortDate } from '../lib/locale'
 ---
 <HomeLayout>
@@ -27,8 +28,8 @@ import { formatShortDate } from '../lib/locale'
 			<a href="https://astro.build/">
 				<img src="/assets/img/banners/astro.gif" alt="banner gif displaying astro">
 			</a>
-			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
-				<img src="/assets/img/banners/lemon.gif" alt="">
+			<a href="https://www.vta.org/">
+				<img src="/assets/img/banners/vta.png" alt="">
 			</a>
 			<a href="https://en.wiktionary.org/wiki/https://finance.yahoo.com/quote/GLD/?guccounter=1&guce_referrer=aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS8">
 				<img src="/assets/img/banners/gold.gif" alt="">
@@ -52,12 +53,13 @@ import { formatShortDate } from '../lib/locale'
 				<div class="quick-links">
 					<h3>{t("home.intro.quick-links.h")}</h3>
 					<ul>
-						<li><a href="https://nsdawn.dev/linguistics">{t("home.intro.quick-links.linguistics")}</a></li>
+						<li><a href={l("/linguistics")}>{t("home.intro.quick-links.linguistics")}</a></li>
 						<li><a href="https://nsdawn.dev/games">{t("home.intro.quick-links.game-dev")}</a></li>
 						<li><a href="https://nsdawn.dev/404">{t("home.intro.quick-links.fun")}</a></li>
 					</ul>
 				</div>
 			</div>
+			<LanguageDropdown />
 			<div class="keep-scrolling">
 				<img src="/assets/img/handmouse.gif" alt="">
 				<div>{t("home.intro.keep-scrolling")}</div>
@@ -68,6 +70,7 @@ import { formatShortDate } from '../lib/locale'
 		<BusinessCard />
 	</section>
 	<section class="card linguistics">
+		<h2><a href={l("/linguistics")}>{t("home.linguistics.h")}</a></h2>
 		<div class="banners">
 			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
 				<img src="/assets/img/banners/lemon.gif" alt="">
@@ -78,11 +81,36 @@ import { formatShortDate } from '../lib/locale'
 			<a href="https://en.wiktionary.org/wiki/wug">
 				<img src="/assets/img/banners/wug.gif" alt="">
 			</a>
-			<a href="https://en.wikipedia.org/wiki/World_Wide_Web">
-				<img src="/assets/img/banners/www.gif" alt="">
+			<a href="https://www.youtube.com/watch?v=Fpu5a0Bl8eY&list=RDFpu5a0Bl8eY&start_radio=1">
+				<img src="/assets/img/banners/99luftballons.gif" alt="">
+			</a>
+			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
+				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			</a>
+			<a href="https://www.fon.hum.uva.nl/praat/">
+				<img src="/assets/img/banners/praat.png" alt="">
 			</a>
 			
 		</div>
+		<p>{t("linguistics.intro.p")}</p>
+		<ol>
+			{[0, 1, 2].map((n) => 
+				<li>
+					<a href={l(t(`linguistics.projects.items.${n}.href`))}><b>{t(`linguistics.projects.items.${n}.title`)}</b></a>
+					<div>{t(`linguistics.projects.items.${n}.desc`)}</div>
+					<div><i>{t(`linguistics.projects.items.${n}.topics`)}</i></div>
+				</li> 
+			)}
+        </ol>
+		<p>
+            <img src="/assets/img/icons/ling-favicon-original.png" alt="noffle icon">
+			<a href={l("/linguistics")}>
+				{t("home.linguistics.go-to")}
+			</a>
+		</p>
+	</section>
+	<section class="web-dev">
+		
 	</section>
 	<section class="os-error">
 		<OsError 
@@ -108,14 +136,22 @@ import { formatShortDate } from '../lib/locale'
 			<a href="https://stardewvalleywiki.com/Maru">
 				<img src="/assets/img/banners/maru.gif" alt="">
 			</a>
-			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
-				<img src="/assets/img/banners/vocaloid.gif" alt="">
+			<a href="https://en.wikipedia.org/wiki/Grass">
+				<img src="/assets/img/banners/minionans.gif" alt="">
+			</a>
+			<a href="https://subnautica.fandom.com/wiki/Peeper">
+				<img src="/assets/img/banners/peeper.gif" alt="">
 			</a>
 			<a href="https://www.growmilkweedplants.com/map?srsltid=AfmBOopKI4SgX2HcgLJ6q9VRLYT4iVnaEJJxi0YrjvK_j_JP-Zn9hCg0">
 				<img src="/assets/img/banners/milkweed.gif" alt="">
 			</a>
 			
+			
 		</div>
+	</section>
+	<section class="card weird-bit">
+		<h1>無我夢中</h1>
+		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum modi alias non laudantium esse dolore voluptatem minus dolorum repellendus veritatis magnam fugiat nihil amet sapiente voluptatibus eaque, facilis, enim ab.</p>
 	</section>
 	<section class="card footer">
 		<div class="last-updated">
@@ -278,6 +314,36 @@ section.card {
 			}
 		}
 	}
+	&.linguistics {
+		--rgb-bg-linguistics: #0000c8;
+		--rgb-bg-white: white;
+		--rgb-text-linguistics: #ccccff;
+		--rgb-a-linguistics: #f0ff9a;
+		background-color: var(--rgb-bg-linguistics);
+		font-family: 'Times New Roman', Times, serif;
+		outline: var(--rgb-text-linguistics) solid 0.25rem;
+		color: var(--rgb-text-linguistics);
+		& h2 {
+			color: var(--rgb-text-linguistics);
+			outline: var(--rgb-text-linguistics) double 0.25rem;
+			padding: 0.5rem;;
+			text-align: center;
+			font-family: 'Times New Roman', Times, serif;
+		}
+		& a {
+			all: unset;
+			text-decoration: underline;
+			cursor: pointer;
+			&:hover {
+				color: var(--rgb-a-linguistics);
+			}
+		}
+	}
+	&.weird-bit {
+		
+		background: url(/assets/img/katy-city.png);
+		background-attachment: fixed;
+	}
 }
 
 section.os-style {
@@ -285,4 +351,6 @@ section.os-style {
 		width: 50vw;
 	}
 }
+
+
 </style>

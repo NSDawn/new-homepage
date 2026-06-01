@@ -2,8 +2,8 @@ export function formatShortDate(d: Date, locale = "en"): string {
     switch (locale) {
         case "ja": 
             const year = `${formatFullWidthNumber(d.getFullYear())}年`
-            const month = `${formatFullWidthNumber(d.getMonth() + 1)}`
-            const day = `${formatFullWidthNumber(d.getDate())}`
+            const month = `${formatFullWidthNumber(d.getMonth() + 1)}月`
+            const day = `${formatFullWidthNumber(d.getDate())}日`
             return `${year} ${month} ${day}`
         case "fr":
             return `${d.getDate()} ${FR_MONTHS[d.getMonth()]} ${d.getFullYear()}`
