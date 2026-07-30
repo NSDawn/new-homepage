@@ -66,8 +66,46 @@ import { formatShortDate } from '../lib/locale'
 			</div>
 		</div>
 	</section>
-	<section class="business-card">
-		<BusinessCard />
+	<section class="card web-dev">
+		<h2>{t("home.web-dev.h")}</h2>
+		<noscript>{t("home.web-dev.no-script")}</noscript>
+		<div class="logos">
+			<a href="https://www.typescriptlang.org/" target="_blank">
+				<img src="/assets/img/svg-logos/typescript.svg" alt="typescript logo">
+			</a>
+			<a href="https://react.dev/" target="_blank">
+				<img src="/assets/img/svg-logos/react.svg" alt="react logo">
+			</a>
+			<a href="https://angular.dev/" target="_blank">
+				<img src="/assets/img/svg-logos/angular.svg" alt="angular logo">
+			</a>
+			<a href="https://astro.build/" target="_blank">
+				<img src="/assets/img/svg-logos/astro.svg" alt="astro logo">
+			</a>
+		</div>
+		<div class="sub-card-wrapper">
+			<div class="sub-card accent1 card1 collapsed">
+				<h3 onclick="toggleCollapsible('div.sub-card.card1')"><div class="indicator"></div><span>{t("home.web-dev.1.h")}</span></h3>
+				<p class="collapsible">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit error autem nemo laborum perspiciatis velit natus nobis assumenda rem animi placeat odio vel voluptatum explicabo adipisci, repellendus, vitae expedita mollitia.
+				</p>
+			</div>
+			<div class="sub-card accent2 card2 collapsed">
+				<h3 onclick="toggleCollapsible('div.sub-card.card2')"><div class="indicator"></div><span>{t("home.web-dev.2.h")}</span></h3>
+				<p class="collapsible">
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit error autem nemo laborum perspiciatis velit natus nobis assumenda rem animi placeat odio vel voluptatum explicabo adipisci, repellendus, vitae expedita mollitia.
+				</p>
+			</div>
+		</div>
+		
+		<a href={l("/cv")} class="check-out">
+			<div class="label">
+				{t("home.web-dev.check-out")}
+			</div>
+			<div class="arrow">
+				→
+			</div>	
+		</a>
 	</section>
 	<section class="card linguistics">
 		<h2><a href={l("/linguistics")}>{t("home.linguistics.h")}</a></h2>
@@ -90,7 +128,6 @@ import { formatShortDate } from '../lib/locale'
 			<a href="https://www.fon.hum.uva.nl/praat/">
 				<img src="/assets/img/banners/praat.png" alt="">
 			</a>
-			
 		</div>
 		<p>{t("linguistics.intro.p")}</p>
 		<ol>
@@ -109,8 +146,8 @@ import { formatShortDate } from '../lib/locale'
 			</a>
 		</p>
 	</section>
-	<section class="web-dev">
-		
+	<section class="business-card">
+		<BusinessCard />
 	</section>
 	<section class="os-error">
 		<OsError 
@@ -142,8 +179,8 @@ import { formatShortDate } from '../lib/locale'
 			<a href="https://subnautica.fandom.com/wiki/Peeper">
 				<img src="/assets/img/banners/peeper.gif" alt="">
 			</a>
-			<a href="https://www.growmilkweedplants.com/map?srsltid=AfmBOopKI4SgX2HcgLJ6q9VRLYT4iVnaEJJxi0YrjvK_j_JP-Zn9hCg0">
-				<img src="/assets/img/banners/milkweed.gif" alt="">
+			<a href="https://en.wikipedia.org/wiki/Project_Hail_Mary">
+				<img src="/assets/img/banners/amaze-amaze-amaze.png" alt="">
 			</a>
 			
 			
@@ -158,70 +195,22 @@ import { formatShortDate } from '../lib/locale'
 			{formatShortDate(new Date(), t("common.lang"))}
 		</div>
 	</section>
-	<!-- 
-	<section class="os-style">
-		<div class="window window1">
-			<div class="title">
-				<h1>A Title Here</h1>
-				<a class="link" href="" role="button">X</a>
-			</div>
-			<p>you have encountered an error.</p>
-		</div>
-	</section>
-	<section>
-		<nav>
-			<button>games</button>
-			<button>projects</button>
-			<button>other</button>
-		</nav>
-	</section>
-	<section class="card">
-		<marquee behavior="" direction="">
-			Tuesday, May 6th 2025 ### 
-			Groundhog Day ### 
-			$GLD -3.4% $SPY +35.5% $GLD -3.4% ### 
-			prices on the rise
-		</marquee>
-	</section>
-	<section class="card">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
-		</p>
-	</section>
-	<section class="card">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
-		</p>
-	</section>
-	<section class="card">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
-		</p>
-		<DaysSinceLast date={new Date(t("home.foraging.days-since.date"))} subtitle={t("home.foraging.days-since.subtitle")} />
-		<WikipediaLink href={t("home.foraging.link.href")} />	
-	</section>
-	<section class="card">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
-		</p>
-	</section>
-	<section class="card">
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui deserunt, quod ab quisquam obcaecati aliquam illo voluptatibus corporis perferendis consectetur amet ipsam veniam vel tenetur! Temporibus quisquam molestiae hic explicabo!
-		</p>
-	</section>
--->
-</HomeLayout>
 
+</HomeLayout>
+<script is:inline>
+function toggleCollapsible(query) {
+	const e = document.querySelector(query);
+	if (e) {
+		e.classList.toggle("collapsed");
+	}
+}
+</script>
 <style is:global>
 main {
 	height: 100vh;
 	width: 100vw;
 	overflow: hidden scroll;
 	scrollbar-width: none;
-	& > section {
-		margin: 1rem 0;
-	}
 }
 & h1, h2, h3, h4 {
 	text-align: center;
@@ -238,7 +227,7 @@ main {
 	top: 12.5vw;
 }
 section.title {
-	height: 80vh;
+	height: 90vh;
 	display: flex; align-items: center; justify-content: center;
 	animation: float 15s infinite linear;
 }
@@ -257,7 +246,7 @@ div.banners {
 	justify-content: center;
 }
 section.card {
-	background-color: var(--rgb-bg-card);
+	background: var(--rgb-bg-card);
 	text-shadow: var(--rgb-bg) 0.05em 0.05em;
 	padding: 1rem;
 	position: relative;
@@ -280,6 +269,7 @@ section.card {
 				& div.quick-links {
 					& h3 {
 						text-align: left;
+						
 					}
 					& ul {
 						margin: 0.5rem;
@@ -343,6 +333,148 @@ section.card {
 		
 		background: url(/assets/img/katy-city.png);
 		background-attachment: fixed;
+	}
+	&.web-dev {
+		--rgb-bg-web-dev: #ffffff;
+		--rgb-bg-web-dev-accent1: #f9baba;
+		--rgb-bg-web-dev-accent2: #9fcdff;
+		--rgb-bg-white: white;
+		--rgb-text-web-dev: #525252;
+		--rgb-text-web-dev-accent1: #670000;
+		--rgb-text-web-dev-accent2: #03264c;
+		--rgb-h-web-dev: #000000;
+		--rgb-a-web-dev: #f0ff9a;
+		--rgb-error-web-dev: #ff5132;
+		background-color: var(--rgb-bg-web-dev);
+		background-position: right center;
+		background-image: url("/assets/img/objects.svg");
+		background-repeat: no-repeat;
+		animation: bg-float 30s infinite linear;
+		padding: 2rem;
+		font-family: NotoSans;
+		color: var(--rgb-text-web-dev);
+		text-shadow: none;
+		box-shadow: 0 0 2rem var(--rgb-h-web-dev);
+		transition: ease-in-out 0.25s;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		& h2, h3, h4 {
+			font-family: Montserrat;
+			color: var(--rgb-h-web-dev);
+			font-weight: 200;
+		}
+		& h2 { 
+			font-size: 3rem;
+
+		}
+		& .sub-card-wrapper {
+			display: flex;
+			align-items: flex-start; justify-content: center;
+			gap: 3rem;
+			& .sub-card {
+				flex: 1;
+				border-radius: 4rem;
+				overflow: hidden;
+				
+				& h3 {
+					margin: 2rem;
+					text-align: left;
+					font-size: 1.75rem;
+					cursor: pointer;
+					& div.indicator {
+						display: inline-block;
+						width: 1rem;
+						margin: 0 1rem;
+						font-size: 2rem;
+						transition: ease-in-out 0.25s;
+						transform: rotate(0deg);
+	
+					}
+					& div.indicator::before {
+						content: "-";
+					}
+				}
+				p {
+					margin: 0;
+					padding: 2rem;
+					padding-top: 0;
+					overflow: hidden;
+					transition: ease-in-out 0.25s;
+
+				}
+			}
+			& .sub-card.collapsed {
+				& h3 > div.indicator {
+					transform: rotate(180deg);
+					&::before {
+						content: "+";
+					}
+				}
+				& p.collapsible {
+					height: 0;
+					padding: 0;
+					font-size: 0;
+					filter: opacity(0);
+				}
+			}
+			& .accent1 {
+				background: var(--rgb-bg-web-dev-accent1);
+				color: var(--rgb-text-web-dev-accent1);
+				& h3 {
+					color: var(--rgb-text-web-dev-accent1);
+				}
+			}
+			& .accent2 {
+				background: var(--rgb-bg-web-dev-accent2);
+				color: var(--rgb-text-web-dev-accent2);
+				& h3 {
+					color: var(--rgb-text-web-dev-accent2);
+				}
+			}
+		}
+		& .check-out {
+			all: unset;
+			display: flex;
+			gap: 0.25rem;
+			cursor: pointer;
+			&:hover {
+				& .label {
+					text-decoration: underline;
+					font-weight: bold;
+				} 
+				& .arrow {
+					transform: translateX(0.5rem);
+				}
+			}
+			& .label {	
+				transition: ease-in-out 0.25s;
+			}
+			& .arrow {
+				transition: ease-in-out 0.25s;
+			}
+		}
+		& .logos {
+			display: flex;
+			place-content: center center;
+			gap: 0.5rem;
+			& > a {
+				flex: 1;
+				all: unset;
+				cursor: pointer;
+				& > img {
+					height: 2rem;
+					transition: ease-in-out 0.25s;
+					filter: opacity(0.8);
+					&:hover {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+		& noscript {
+			color: var(--rgb-error-web-dev);
+		}
 	}
 }
 

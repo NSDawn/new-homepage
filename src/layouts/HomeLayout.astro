@@ -38,13 +38,43 @@ const { webpTitle, bgElements, redirect } = Astro.props;
                 <div class="decoration-planet star b4"></div>
                 <div class="decoration-planet star b5"></div>
                 <div class="decoration-planet star b6"></div>
+                <div class="decoration-planet star b7"></div>
+                <div class="decoration-planet star b8"></div>
+                <div class="decoration-planet star b9"></div>
+                <div class="decoration-planet star b10"></div>
             </div>
 			</>
 			: null}
 			{ bgElements !== "none" && bgElements !== "bg-only" ? 
 			<>
             <div class="decoration-text calligraphy a1">無為</div>
-            <div class="decoration-text calligraphy a2">生舊叉燒好過生你</div>
+            <div class="decoration-text calligraphy a2">飾りニホンゴ</div>
+            <div class="decoration-text calligraphy a3">
+				खरीदारी लिस्ट:
+				<ol>
+					<li>जल</li>
+					<li>जंगल</li>
+					<li>ज़मीन</li>
+				</ol>
+			</div>
+            <div class="decoration-text calligraphy a4">
+				we're here because we're here because we're here because we're here
+				<span class="smaller1">
+					we're here because we're here because we're here because we're here
+				</span>
+				<span class="smaller2">
+					we're here because we're here because we're here because we're here
+				</span>
+				<span class="smaller3">
+					we're here because we're here because we're here because we're here
+				</span>
+				<span class="smaller4">
+					we're here because we're here because we're here because we're here
+				</span>
+				<span class="smaller5">
+					we're here because we're here because we're here because we're here
+				</span>
+			</div>
             <img class="decoration-img hot-dog" src="/assets/img/hot-dog.png" alt="" aria-hidden >
             <img class="decoration-img statue" src="/assets/img/statue-ajanta.png" alt="" aria-hidden >
             <img class="decoration-img stunfisk" src="/assets/img/stunfisk.png" alt="" aria-hidden >
@@ -54,7 +84,11 @@ const { webpTitle, bgElements, redirect } = Astro.props;
             <img class="decoration-img shape" src="/assets/img/shape.gif" alt="" aria-hidden >
             <img class="decoration-img water-lily" src="/assets/img/water-lily.png" alt="" aria-hidden >
             <img class="decoration-img rice-cooker" src="/assets/img/rice-cooker.png" alt="" aria-hidden >
+            <img class="decoration-img poisonous-potato" src="/assets/img/poisonous-potato.webp" alt="" aria-hidden >
+            <img class="decoration-img egg" src="/assets/img/egg.gif" alt="" aria-hidden >
+            <img class="decoration-img absolute-cinema" src="/assets/img/absolute-cinema.png" alt="" aria-hidden >
             <img class="decoration-img immune-to-propaganda" src="/assets/img/immune-to-propaganda.png" alt="" aria-hidden >
+            <img class="decoration-img missing-texture" src="/assets/img/missing-texture.png" alt="" aria-hidden >
             <img class="decoration-img synergy" src="/assets/img/synergy.png" alt="" aria-hidden >
             </>
 			: null}
@@ -76,6 +110,10 @@ const { webpTitle, bgElements, redirect } = Astro.props;
 @font-face {
     font-family: Audiowide;
     src: url("/assets/fonts/Audiowide/Audiowide-Regular.ttf");
+}
+@font-face {
+    font-family: Montserrat;
+    src: url("/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 img { 
 	user-select: none;
@@ -213,6 +251,7 @@ div.decoration-planet {
 	}
 	&.star {
 		filter: drop-shadow(0vw 0vw 1vw var(--rgb-radical-shadow)) drop-shadow(0vw 10vw 10vw var(--rgb-radical-shadow));
+		    clip-path: polygon(50% 0, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0 50%, 35% 35%);
 		border-radius: 50%;
 		position: fixed;
 		aspect-ratio: 1;
@@ -230,6 +269,30 @@ div.decoration-planet {
 		}
 		&.b4 {
 			width: 0.5vw; right: 30vw; top: 24vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b5 {
+			width: 0.5vw; right: 32vw; top: 4vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b6 {
+			width: 0.75vw; right: 33vw; top: 5vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b7 {
+			width: 1vw; right: 25vw; top: 7vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b8 {
+			width: 0.5vw; right: 17vw; top: 2vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b9 {
+			width: 0.5vw; right: 23vw; top: 12vw;
+			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
+		}
+		&.b10 {
+			width: 0.5vw; right: 10vw; top: 15vw;
 			background: linear-gradient(to bottom, var(--rgb-radical-yellow), var(--rgb-radical-orange));
 		}
 	}
@@ -264,6 +327,11 @@ img.decoration-img {
 		top: 75vh;
 		width: 10vw;
 	}
+	&.missing-texture {
+		left: 32vw;
+		top: 84vh;
+		width: 3vw;
+	}
     &.statue {
         right: 1vw;
 		top: 35vh;
@@ -280,6 +348,21 @@ img.decoration-img {
         right: 22vw;
 		top: 70vh;
 		width: 5vw;
+    }
+	&.poisonous-potato {
+        right: 18vw;
+		top: 82vh;
+		width: 2.5vw;
+    }
+	&.egg {
+        left: 4vw;
+		top: 75vh;
+		width: 2.5vw;
+    }
+	&.absolute-cinema {
+        right: 40vw;
+		top: 75vh;
+		width: 2.5vw;
     }
 	&.inuyasha {
         right: 15vw;
@@ -331,6 +414,35 @@ img.decoration-img {
         transform: translateY(0.5em);
     }
 }
+@keyframes bg-float {
+    0% {
+        background-position-y: 50%;
+    }
+    12.5% {
+        background-position-y: 60%;
+    }
+    25% {
+        background-position-y: 70%;
+    }
+    37.5% {
+        background-position-y: 60%;
+    }
+    50% {
+        background-position-y: 50%;
+    }
+    62.5% {
+        background-position-y: 40%;
+    }
+    75% {
+        background-position-y: 30%;
+    }
+    87.5% {
+        background-position-y: 40%;
+    }
+    100% {
+        background-position-y: 50%;
+    }
+}
 @keyframes bg-color {
     0% {
         filter: hue-rotate(0deg);
@@ -353,10 +465,42 @@ div.decoration-text.calligraphy	{
 	}
 	&.a2 {
 		left: 4vw;
-		top: 55vh;
-		font-size: 5vw;
-		width: 20vw;
+		top: 67vh;
+		font-size: 4vw;
+		width: 31vw;
 		line-height: 5vw;
+	}
+	&.a3 {
+		left: 30vw;
+		top: 71vh;
+		font-size: 0.5rem;
+		& ol {
+			margin: 0;
+			list-style-type: devanagari;
+			padding-inline-start: 1rem;
+		}
+	}
+	&.a4 {
+		right: 4vw;
+		top: 53vh;
+		transform: rotate(15deg);
+		font-size: 1vw;
+		width: 25vw;
+		& > span.smaller1 {
+			font-size: 0.8vw;
+		}
+		& > span.smaller2 {
+			font-size: 0.6vw;
+		}
+		& > span.smaller3 {
+			font-size: 0.4vw;
+		}
+		& > span.smaller4 {
+			font-size: 0.2vw;
+		}
+		& > span.smaller5 {
+			font-size: 0.1vw;
+		}
 	}
 	
 }

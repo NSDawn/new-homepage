@@ -23,6 +23,17 @@
 			"p": "[niɕant(o) sɯːɾia]と言います。サンノゼ大学で計算言語学の大学院生です。 以前は、私の研究・学習は主に音声学と音韻論に焦点を当てていました。現在は、インド・アーリア語派およびドラヴィダ語派に関心を持っています。",
 			"timeline": "2019 - 2023: University of California, Santa Cruz: BA Language Studies - Japanese\n2025 - present: San Jose State University: MS Computational Linguistics"
 		},
+		"web-dev" : {
+			"h": "ウェブ開発者とし職業します。",
+			"1": {
+				"h": "中心：フロントエンド"
+			},
+			"2": {
+				"h": "フルスタック開発体験"
+			},
+			"no-script": "⚠ Seems you have JS scripts turned off. Good on you. The modern web relies on JS scripts, so 'modern' designs like this one fall apart. The rest of my website works just fine.",
+			"check-out": "Check out my CV"
+		},
 		"os-error": {
 			"h": "Woah there, cybersurfer!",
 			"p": "You might be wondering, \"Why does your website look like this?\" In a world full of so-called \"best practices\" and \"design principles\", something's been lost. The glorious age of the web as a weird, wacky place is a distant memory.",

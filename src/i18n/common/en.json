@@ -22,6 +22,17 @@
 			"h": "Linguistics",
 			"go-to": "Check out Linguistics..."
 		},
+		"web-dev" : {
+			"h": "Nishant is a web developer.",
+			"1": {
+				"h": "Front-end focus"
+			},
+			"2": {
+				"h": "Full-stack experience"
+			},
+			"no-script": "⚠ Seems you have JS scripts turned off. Good on you. The modern web relies on JS scripts, so 'modern' designs like this one fall apart. The rest of my website works just fine.",
+			"check-out": "Check out my CV"
+		},
 		"os-error": {
 			"h": "Woah there, cybersurfer!",
 			"p": "You might be wondering, \"Why does your website look like this?\" In a world full of so-called \"best practices\" and \"design principles\", something's been lost. The glorious age of the web as a weird, wacky place is a distant memory.",
