@@ -183,6 +183,30 @@
 		"h3": "Suria",
 		"cv": "CV",
 		"titles": "Research Linguist | Front-end Engineer | Game Developer | Educator | Cook | Financial Analyst | Urban Farmer | Forager | Skier | Angler"
+	},
+	"birb": {
+		"webp-title": "Nishant's Birbs",
+		"h": "Nishant's Birbs",
+		"birbs": {
+			"0": {
+				"date": "2026/10/04",
+				"common-name": "Canada Jay",  
+				"species": "Perisoreus canadensis",  
+				"location": "Crater Lake, OR, US",
+				"tagline": "Literally the most bird of all time",
+				"rarity": "🟢 Common",
+				"blurb": "These birds were very bird-like in nature. They were numerous, and got up to all sorts of bird-like activities such as perching on things."
+			},
+			"1": {
+				"date": "2023/08/04",
+				"common-name": "Rock Pigeon",  
+				"species": "Columba livia",  
+				"location": "Manhattan, NY, US",
+				"tagline": "He's walking over here",
+				"rarity": "🟢 Common",
+				"blurb": "This pigeon called for a good picture. Unfortunately, I could not deliver, and this one will have to suffice. This is likely one of my favorite pigeons in my collection. This pigeon reminds us to be ourselves, and to find meaning in our own uniqueness. Strolling Manhattan, among many shades of people, it was equally heartwarming to see many shades of rock pigeons."
+			}
+		}
 	}
 
 }

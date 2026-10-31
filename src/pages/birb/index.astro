@@ -1,0 +1,30 @@
+---
+import BirbLayout from "../../layouts/BirbLayout.astro";
+import  { t } from "astro-i18n";
+
+import img20261004 from "../../../public/assets/img/birbs/20261004-canada-jay.png"
+import img20230804 from "../../../public/assets/img/birbs/20230804-rock-dove.png"
+const birdRecords: [string, ImageMetadata][] = [
+    ["0", img20261004],
+    ["1", img20230804],
+]
+---
+
+<BirbLayout webpTitle={t("birb.webp-title")} title={t("birb.h")}>
+
+    {birdRecords.map(([id, img]) => 
+    
+        <section class="card">
+        <div class="date">{t(`birb.birbs.${id}.date`)}</div>
+        <h2>{t(`birb.birbs.${id}.common-name`)}</h2>
+        <h3>🪪 {t(`birb.birbs.${id}.species`)}, 📍 {t(`birb.birbs.${id}.location`)}</h3>
+        <img class="portrait" src={img.src} alt={t(`birb.birbs.${id}.common-name`)}>
+        <h3>{t(`birb.birbs.${id}.tagline`)}</h3>
+        <h3>{t(`birb.birbs.${id}.rarity`)}</h3>
+        <p>{t(`birb.birbs.${id}.blurb`)}</p>
+        </section>
+    
+    )}
+    
+
+</BirbLayout> 
