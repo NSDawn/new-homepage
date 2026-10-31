@@ -185,9 +185,20 @@ import { formatShortDate } from '../lib/locale'
 			
 			
 		</div>
+		<div class="cool-games">
+			<h3>{t("home.game-dev.cool-games.h")}</h3>
+			<div class="games">
+				{[0, 1, 2, 3, 4].map((n) => 
+					<a href={t(`home.game-dev.cool-games.games.${n}.href`)}>
+						<img src={t(`home.game-dev.cool-games.games.${n}.src`)} alt={t(`home.game-dev.cool-games.games.${n}.alt`)} />
+					</a>
+				)}
+			</div>
+		</div>
 	</section>
 	<section class="card weird-bit">
 		<h1>無我夢中</h1>
+		<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4PjAnMjrztwRf9mcwNJw4Q?utm_source=generator&si=321cc69bbd8e4c13" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum modi alias non laudantium esse dolore voluptatem minus dolorum repellendus veritatis magnam fugiat nihil amet sapiente voluptatibus eaque, facilis, enim ab.</p>
 	</section>
 	<section class="card footer">
@@ -474,6 +485,33 @@ section.card {
 		}
 		& noscript {
 			color: var(--rgb-error-web-dev);
+		}
+	}
+	&.game-dev {
+		& .cool-games {
+			& h3 {
+				margin: 1rem;
+			}
+			& .games {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+				gap: 2vw;
+				& a {
+					all:unset;
+					cursor: pointer;
+					padding: 0 0;
+					&:hover {
+						transform: scale(1.1);
+					}
+					& img {
+						outline: var(--rgb-text) 0.1rem solid;
+						aspect-ratio: 2;
+						width: max(150px, 14vw);
+					}
+				}
+			}
 		}
 	}
 }

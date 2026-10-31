@@ -8,6 +8,22 @@ interface Props {
 }
 const { webpTitle, bgElements, redirect } = Astro.props;
 
+import imgHotDog from "../../public/assets/img/hot-dog.png";
+import imgAbsoluteCinema from "../../public/assets/img/absolute-cinema.png";
+import imgStatue from "../../public/assets/img/statue-ajanta.png";
+import imgStunfisk from "../../public/assets/img/stunfisk.png";
+import imgInuyasha from "../../public/assets/img/inuyasha.gif";
+import imgCat from "../../public/assets/img/cat.gif";
+import imgHailMary from "../../public/assets/img/hail-mary.png";
+import imgShape from "../../public/assets/img/shape.gif";
+import imgWaterLily from "../../public/assets/img/water-lily.png";
+import imgRiceCooker from "../../public/assets/img/rice-cooker.png";
+import imgPoisonousPotato from "../../public/assets/img/poisonous-potato.webp";
+import imgEgg from "../../public/assets/img/egg.gif";
+import imgImmuneToPropaganda from "../../public/assets/img/immune-to-propaganda.png";
+import imgMissingTexture from "../../public/assets/img/missing-texture.png";
+import imgSynergy from "../../public/assets/img/synergy.png";
+
 ---
 <html lang={t("common.lang")}>
 	<head>
@@ -46,51 +62,52 @@ const { webpTitle, bgElements, redirect } = Astro.props;
 			</>
 			: null}
 			{ bgElements !== "none" && bgElements !== "bg-only" ? 
-			<>
-            <div class="decoration-text calligraphy a1">無為</div>
-            <div class="decoration-text calligraphy a2">飾りニホンゴ</div>
-            <div class="decoration-text calligraphy a3">
-				खरीदारी लिस्ट:
-				<ol>
-					<li>जल</li>
-					<li>जंगल</li>
-					<li>ज़मीन</li>
-				</ol>
-			</div>
-            <div class="decoration-text calligraphy a4">
-				we're here because we're here because we're here because we're here
-				<span class="smaller1">
+			<div class="decoration-elements">
+				<div class="decoration-text calligraphy a1">無為</div>
+				<div class="decoration-text calligraphy a2">飾りニホンゴ</div>
+				<div class="decoration-text calligraphy a3">
+					खरीदारी लिस्ट:
+					<ol>
+						<li>जल</li>
+						<li>जंगल</li>
+						<li>ज़मीन</li>
+					</ol>
+				</div>
+				<div class="decoration-text calligraphy a4">
 					we're here because we're here because we're here because we're here
-				</span>
-				<span class="smaller2">
-					we're here because we're here because we're here because we're here
-				</span>
-				<span class="smaller3">
-					we're here because we're here because we're here because we're here
-				</span>
-				<span class="smaller4">
-					we're here because we're here because we're here because we're here
-				</span>
-				<span class="smaller5">
-					we're here because we're here because we're here because we're here
-				</span>
-			</div>
-            <img class="decoration-img hot-dog" src="/assets/img/hot-dog.png" alt="" aria-hidden >
-            <img class="decoration-img statue" src="/assets/img/statue-ajanta.png" alt="" aria-hidden >
-            <img class="decoration-img stunfisk" src="/assets/img/stunfisk.png" alt="" aria-hidden >
-            <img class="decoration-img inuyasha" src="/assets/img/inuyasha.gif" alt="" aria-hidden >
-            <img class="decoration-img cat" src="/assets/img/cat.gif" alt="" aria-hidden >
-            <img class="decoration-img duck-cinni" src="/assets/img/duck-cinni.png" alt="" aria-hidden >
-            <img class="decoration-img shape" src="/assets/img/shape.gif" alt="" aria-hidden >
-            <img class="decoration-img water-lily" src="/assets/img/water-lily.png" alt="" aria-hidden >
-            <img class="decoration-img rice-cooker" src="/assets/img/rice-cooker.png" alt="" aria-hidden >
-            <img class="decoration-img poisonous-potato" src="/assets/img/poisonous-potato.webp" alt="" aria-hidden >
-            <img class="decoration-img egg" src="/assets/img/egg.gif" alt="" aria-hidden >
-            <img class="decoration-img absolute-cinema" src="/assets/img/absolute-cinema.png" alt="" aria-hidden >
-            <img class="decoration-img immune-to-propaganda" src="/assets/img/immune-to-propaganda.png" alt="" aria-hidden >
-            <img class="decoration-img missing-texture" src="/assets/img/missing-texture.png" alt="" aria-hidden >
-            <img class="decoration-img synergy" src="/assets/img/synergy.png" alt="" aria-hidden >
-            </>
+					<span class="smaller1">
+						we're here because we're here because we're here because we're here
+					</span>
+					<span class="smaller2">
+						we're here because we're here because we're here because we're here
+					</span>
+					<span class="smaller3">
+						we're here because we're here because we're here because we're here
+					</span>
+					<span class="smaller4">
+						we're here because we're here because we're here because we're here
+					</span>
+					<span class="smaller5">
+						we're here because we're here because we're here because we're here
+					</span>
+				</div>
+				<div class="decoration-text calligraphy a5">𓆟</div>
+				<img class="decoration-img hot-dog" src={imgHotDog.src} alt="" aria-hidden >
+				<img class="decoration-img statue" src={imgStatue.src} alt="" aria-hidden >
+				<img class="decoration-img stunfisk" src={imgStunfisk.src} alt="" aria-hidden >
+				<img class="decoration-img inuyasha" src={imgInuyasha.src} alt="" aria-hidden >
+				<img class="decoration-img cat" src={imgCat.src} alt="" aria-hidden >
+				<img class="decoration-img hail-mary" src={imgHailMary.src} alt="" aria-hidden >
+				<img class="decoration-img shape" src={imgShape.src} alt="" aria-hidden >
+				<img class="decoration-img water-lily" src={imgWaterLily.src} alt="" aria-hidden >
+				<img class="decoration-img rice-cooker" src={imgRiceCooker.src} alt="" aria-hidden >
+				<img class="decoration-img poisonous-potato" src={imgPoisonousPotato.src} alt="" aria-hidden >
+				<img class="decoration-img egg" src={imgEgg.src} alt="" aria-hidden >
+				<img class="decoration-img absolute-cinema" src={imgAbsoluteCinema.src} alt="" aria-hidden >
+				<img class="decoration-img immune-to-propaganda" src={imgImmuneToPropaganda.src} alt="" aria-hidden >
+				<img class="decoration-img missing-texture" src={imgMissingTexture.src} alt="" aria-hidden >
+				<img class="decoration-img synergy" src={imgSynergy.src} alt="" aria-hidden >
+            </div>
 			: null}
         </div>
 		{redirect ? 
@@ -377,6 +394,13 @@ img.decoration-img {
         animation: float 10s infinite linear;
 
     }
+	&.hail-mary {
+		right: 3vw;
+		top: 24vh;
+		width: 3vw;
+		animation: float 14s infinite linear;
+		animation-delay: -4s;
+	}
 	&.cat {
         right: 12vw;
 		top: 64vh;
@@ -454,6 +478,9 @@ img.decoration-img {
         filter: hue-rotate(0deg);
     }
 }
+div.decoration-elements {
+	opacity: 0.75;
+}
 div.decoration-text.calligraphy	{
 	position: fixed;
 	text-shadow: var(--rgb-radical-magenta) 0.02em 0.02em, var(--rgb-radical-orange) -0.02em -0.02em;
@@ -501,6 +528,14 @@ div.decoration-text.calligraphy	{
 		& > span.smaller5 {
 			font-size: 0.1vw;
 		}
+	}
+	&.a5 {
+		left: 54vw;
+		bottom: 6vh;
+		transform: rotate(15deg);
+		font-size: 2vw;
+		width: 31vw;
+		line-height: 5vw;
 	}
 	
 }

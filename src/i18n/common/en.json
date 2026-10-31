@@ -33,6 +33,38 @@
 			"no-script": "⚠ Seems you have JS scripts turned off. Good on you. The modern web relies on JS scripts, so 'modern' designs like this one fall apart. The rest of my website works just fine.",
 			"check-out": "Check out my CV"
 		},
+		"game-dev": {
+			"cool-games": {
+				"h": "Games I think are neat",
+				"games": {
+					"0": {
+						"href": "https://store.steampowered.com/app/1569580/Blue_Prince/",
+						"src": "/assets/img/blue-prince.jpg",
+						"alt": "Blue Prince cover image"
+					},
+					"1": {
+						"href": "https://store.steampowered.com/app/1931770/Chants_of_Sennaar/",
+						"src": "/assets/img/chants-of-senaar.png",
+						"alt": "Chants of Senaar cover image"
+					},
+					"2": {
+						"href": "https://store.steampowered.com/app/653530/Return_of_the_Obra_Dinn/",
+						"src": "/assets/img/return-of-the-obra-dinn.webp",
+						"alt": "Return of the Obra Dinn cover image"
+					},
+					"3": {
+						"href": "https://store.steampowered.com/app/874260/The_Forgotten_City/",
+						"src": "/assets/img/the-forgotten-city.jpg",
+						"alt": "The Forgotten City cover image"
+					},
+					"4": {
+						"href": "https://store.steampowered.com/app/1967430/Ghost_Trick_Phantom_Detective/",
+						"src": "/assets/img/ghost-trick.jpg",
+						"alt": "Ghost Trick cover image"
+					}
+				}
+			}
+		},
 		"os-error": {
 			"h": "Woah there, cybersurfer!",
 			"p": "You might be wondering, \"Why does your website look like this?\" In a world full of so-called \"best practices\" and \"design principles\", something's been lost. The glorious age of the web as a weird, wacky place is a distant memory.",
