@@ -1,6 +1,10 @@
 ---
 import { t, l } from 'astro-i18n';
 import LingLayout from "../../layouts/LingLayout.astro";
+
+import imgNishant from "../../../public/assets/img/nishant-standing-on-business.png"
+import imgNoffle from "../../../public/assets/img/icons/ling-favicon-original.png"
+import Banner from '../../components/Banner.astro';
 ---
 <LingLayout webpTitle={t("linguistics.webp-title")} title={t("linguistics.h")}>
     <section class="intro"> 
@@ -10,7 +14,7 @@ import LingLayout from "../../layouts/LingLayout.astro";
             </p>
         </div>
         <div class="portrait">
-            <img src="/assets/img/nishant-standing-on-business.png" alt="nishant suria portrait">
+            <img src={imgNishant.src} alt="nishant suria portrait">
             <div class="label">Nishant Suria</div>
         </div>
     </section>
@@ -68,36 +72,24 @@ import LingLayout from "../../layouts/LingLayout.astro";
                 </div>
                 <div class="noffles">
                     <div class="noffle-wrapper">
-                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
+                        <img src={imgNoffle.src} alt="">
                     </div>
                     <div>{t("linguistics.noffles.blurbs.0")}</div>
                     <div class="noffle-wrapper">
-                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
-                        <img src="/assets/img/icons/ling-favicon-original.png" alt="">
+                        <img src={imgNoffle.src} alt="">
+                        <img src={imgNoffle.src} alt="">
                     </div>
                     <div>{t("linguistics.noffles.blurbs.1")}</div>
                 </div>
             </div>
         </div>
         <div class="banners">
-			<a href="https://www.youtube.com/watch?v=SX_ViT4Ra7k">
-				<img src="/assets/img/banners/lemon.gif" alt="lemon banner">
-			</a>
-			<a href="https://www.youtube.com/watch?v=T_lC2O1oIew">
-				<img src="/assets/img/banners/plasticlove.gif" alt="plastic love banner">
-			</a>
-			<a href="https://en.wiktionary.org/wiki/wug">
-				<img src="/assets/img/banners/wug.gif" alt="wug banner">
-			</a>
-			<a href="https://www.youtube.com/watch?v=Fpu5a0Bl8eY&list=RDFpu5a0Bl8eY&start_radio=1">
-				<img src="/assets/img/banners/99luftballons.gif" alt="99 luftballons banner">
-			</a>
-			<a href="https://www.youtube.com/watch?v=sjGK_jWADRE">
-				<img src="/assets/img/banners/vocaloid.gif" alt="vocaloid banner">
-			</a>
-			<a href="https://www.fon.hum.uva.nl/praat/">
-				<img src="/assets/img/banners/praat.png" alt="praat banner">
-			</a>
+            <Banner key="lemon"/>
+            <Banner key="plastic-love"/>
+            <Banner key="wug"/>
+            <Banner key="99-luftballons"/>
+            <Banner key="vocaloid"/>
+            <Banner key="praat"/>
 		</div>
     </section>
 </LingLayout>

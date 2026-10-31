@@ -7,13 +7,14 @@ interface Props {
   buttonEffects: (string|null)[],
 }
 const { title, blurb, imgSrc, buttonTexts, buttonEffects } = Astro.props;
+import imgXIcon from "../../public/assets/img/icons/x.svg";
 ---
 <div class="os-style">
     <div class="window window-style">
         <div class="title">
             <h1>{title}</h1>
             <div class="x-button button-style disabled" role="button">
-                <img src="/assets/img/icons/x.svg" alt="">
+                <img src={imgXIcon.src} alt="x icon">
             </div>
         </div>
         <div class="content">

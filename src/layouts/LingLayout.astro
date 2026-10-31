@@ -2,6 +2,14 @@
 import { l, t } from 'astro-i18n'
 import LanguageDropdown from '../components/LanguageDropdown.astro';
 
+import imgLingFavicon from "../../public/assets/img/icons/ling-favicon.png"
+import imgLingFaviconOriginal from "../../public/assets/img/icons/ling-favicon-original.png"
+import imgHomeIcon from "../../public/assets/img/icons/home-white.svg"
+import imgGithubIcon from "../../public/assets/img/icons/github-white.svg"
+import imgLinkedinIcon from "../../public/assets/img/icons/linkedin-white.svg"
+import imgMailIcon from "../../public/assets/img/icons/outgoing-mail-white.svg"
+
+
 interface Props {
   webpTitle?: string;
   title?: string; 
@@ -11,7 +19,7 @@ const { webpTitle, title } = Astro.props;
 <html lang={t("common.lang")}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/assets/img/icons/ling-favicon.png" />
+		<link rel="icon" type="image/png" href={imgLingFavicon.src} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{webpTitle ?? t("home.webp-title")}</title>
@@ -20,17 +28,17 @@ const { webpTitle, title } = Astro.props;
         <header>
             {title ? 
                 <div class="heading-wrapper">
-                    <img class="inline-icon" src="/assets/img/icons/ling-favicon-original.png" alt="noffle icon">
+                    <img class="inline-icon" src={imgLingFaviconOriginal.src} alt="noffle icon">
                     <h1>   
                         {title}
                     </h1>
-                    <img class="inline-icon" src="/assets/img/icons/ling-favicon-original.png" alt="noffle icon">
+                    <img class="inline-icon" src={imgLingFaviconOriginal.src} alt="noffle icon">
                 </div>
             : null }
             <nav>
                 <LanguageDropdown />
                 <a href={l("/")} class="button-like" role="link">
-                    <img src="/assets/img/icons/home-white.svg" alt="home icon" />
+                    <img src={imgHomeIcon.src} alt="home icon" />
                 </a>
             </nav>
         </header>
@@ -39,13 +47,13 @@ const { webpTitle, title } = Astro.props;
         </main>
         <footer>
             <a class="icon-link" href="https://github.com/NSDawn" target="_blank">
-                <img src="/assets/img/icons/github-white.svg"  alt="">
+                <img src={imgGithubIcon.src}  alt="">
             </a>
             <a class="icon-link" href="https://www.linkedin.com/in/nishant-suria/" target="_blank">
-                <img src="/assets/img/icons/linkedin-white.svg"  alt="">
+                <img src={imgLinkedinIcon.src}  alt="">
             </a>
             <a class="icon-link" href="mailto:nishant.suria@gmail.com" target="_blank">
-                <img class="shift-down-a-bit" src="/assets/img/icons/outgoing-mail-white.svg"  alt="">
+                <img class="shift-down-a-bit" src={imgMailIcon.src}  alt="">
             </a>
         </footer>
     </body>

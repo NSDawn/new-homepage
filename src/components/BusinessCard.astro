@@ -1,5 +1,9 @@
 ---
 import { t } from 'astro-i18n'
+
+import imgMailIcon from "../../public/assets/img/icons/mail.svg";
+import imgLinkIcon from "../../public/assets/img/icons/link.svg";
+import imgResumeIcon from "../../public/assets/img/icons/resume.svg";
 ---
 <div class="business-card">
     <div class="decoration">
@@ -15,20 +19,20 @@ import { t } from 'astro-i18n'
         <marquee behavior="scroll" scrolldelay=200 direction="">{t("business-card.titles")}</marquee>
     </div>
     <div class="contact mail">
-        <img data-copytext="nishant.suria@gmail.com" src="/assets/img/icons/mail.svg" role="button" alt="">
+        <img data-copytext="nishant.suria@gmail.com" src={imgMailIcon.src} role="button" alt="">
         <a href="mailto:nishant.suria@gmail.com">nishant.suria@gmail.com</a>
     </div>
     <div class="contact linkedin">
-        <img data-copytext="https://www.linkedin.com/in/nishant-suria/" src="/assets/img/icons/link.svg" role="button" alt="">
+        <img data-copytext="https://www.linkedin.com/in/nishant-suria/" src={imgLinkIcon.src} role="button" alt="">
         <a href="https://linkedin.com/in/nishant-suria/" target="_blank">linkedin.com/in/nishant-suria/</a>
     </div>
     <div class="contact github">
-        <img data-copytext="https://github.com/NSDawn" src="/assets/img/icons/link.svg" alt="">
+        <img data-copytext="https://github.com/NSDawn" src={imgLinkIcon.src} alt="">
         <a href="https://github.com/NSDawn" target="_blank">github.com/NSDawn</a>
     </div>
     <div class="resume-link">
         <a href="https://nsdawn.dev/resume">
-            <img src="/assets/img/icons/resume.svg" alt="" />
+            <img src={imgResumeIcon.src} alt="" />
             <div>{t("business-card.cv")}</div>
         </a>
     </div>
@@ -36,7 +40,7 @@ import { t } from 'astro-i18n'
 <style>
 @font-face {
     font-family: Rajdhani;
-    src: url("/assets/fonts/Rajdhani/Rajdhani-Medium.ttf");
+    src: url("../../public/assets/fonts/Rajdhani/Rajdhani-Medium.ttf");
 }
 div.business-card {
     --rgb-black: #000000;

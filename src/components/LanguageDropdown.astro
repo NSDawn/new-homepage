@@ -5,10 +5,11 @@ const changeLangHref = (langCode: string) => l(Astro.url.pathname, undefined, {t
 
 export const locales = ["en", "fr", "es", "ja", "hi"]
 
+import imgWorld from "../../public/assets/img/icons/globe-white.svg"
 --- 
 <div class="dropdown-wrapper">
     <button type="button">
-        <img src="/assets/img/icons/globe-white.svg" alt="change language">
+        <img src={imgWorld.src} alt="change language">
     </button>
     <div class="dropdown language-links">
         {locales.map((locale) => 

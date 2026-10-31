@@ -8,6 +8,8 @@ interface Props {
 }
 const { webpTitle, bgElements, redirect } = Astro.props;
 
+import imgFavicon from "../../public/assets/img/icons/akatsuki-brightened.png";
+
 import imgHotDog from "../../public/assets/img/hot-dog.png";
 import imgAbsoluteCinema from "../../public/assets/img/absolute-cinema.png";
 import imgStatue from "../../public/assets/img/statue-ajanta.png";
@@ -28,7 +30,7 @@ import imgSynergy from "../../public/assets/img/synergy.png";
 <html lang={t("common.lang")}>
 	<head>
 		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
+		<link rel="icon" type="image/svg+xml" href={imgFavicon.src} />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		{redirect ? 
@@ -117,20 +119,20 @@ import imgSynergy from "../../public/assets/img/synergy.png";
             <slot/>
         </main>
     </body>
-	<script src="/assets/js/konamiCode.js" is:inline />
+	<script src="../../public/assets/js/konamiCode.js" is:inline />
 </html>
 <style is:global>
 @font-face {
     font-family: NotoSans;
-    src: url("/assets/fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.ttf");
+    src: url("../../public/assets/fonts/NotoSans/NotoSans-VariableFont_wdth\,wght.ttf");
 }
 @font-face {
     font-family: Audiowide;
-    src: url("/assets/fonts/Audiowide/Audiowide-Regular.ttf");
+    src: url("../../public/assets/fonts/Audiowide/Audiowide-Regular.ttf");
 }
 @font-face {
     font-family: Montserrat;
-    src: url("/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
+    src: url("../../public/assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf");
 }
 img { 
 	user-select: none;

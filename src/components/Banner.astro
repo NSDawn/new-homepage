@@ -1,0 +1,141 @@
+---
+interface Props {
+    key: string
+}
+const { key } = Astro.props;
+
+import imgVocaloid from "../../public/assets/img/banners/vocaloid.gif";
+import img99Luftballons from "../../public/assets/img/banners/99luftballons.gif";
+import imgAmazeAmazeAmaze from "../../public/assets/img/banners/amaze-amaze-amaze.png";
+import imgAstro from "../../public/assets/img/banners/astro.gif";
+import imgBloodMoon from "../../public/assets/img/banners/blood-moon.png";
+import imgChangeling from "../../public/assets/img/banners/changeling.gif";
+import imgCSS from "../../public/assets/img/banners/css.gif";
+import imgGold from "../../public/assets/img/banners/gold.gif";
+import imgInResponse from "../../public/assets/img/banners/in-response.gif";
+import imgLemon from "../../public/assets/img/banners/lemon.gif";
+import imgMaru from "../../public/assets/img/banners/maru.gif";
+import imgMilkweed from "../../public/assets/img/banners/milkweed.gif";
+import imgMinionans from "../../public/assets/img/banners/minionans.gif";
+import imgNoAI from "../../public/assets/img/banners/no-ai.png";
+import imgPeeper from "../../public/assets/img/banners/peeper.gif";
+import imgPlasticLove from "../../public/assets/img/banners/plasticlove.gif";
+import imgPraat from "../../public/assets/img/banners/praat.png";
+import imgVTA from "../../public/assets/img/banners/vta.png";
+import imgWug from "../../public/assets/img/banners/wug.gif";
+import imgWWW from "../../public/assets/img/banners/www.gif";
+import type { ImageMetadata } from "astro";
+
+
+const banners: Record<string, {img: ImageMetadata, href: string, alt: string}>= {
+    "vocaloid": {
+        img: imgVocaloid,
+        href: "https://www.youtube.com/watch?v=sjGK_jWADRE",
+        alt: "vocaloid banner"
+    },
+    "99-luftballons": {
+        img: img99Luftballons,
+        href: "https://www.youtube.com/watch?v=Fpu5a0Bl8eY",
+        alt: "99-luftballons banner"
+    },
+    "amaze-amaze-amaze": {
+        img: imgAmazeAmazeAmaze,
+        href: "https://www.youtube.com/watch?v=ecy17Wi7nHM",
+        alt: "amaze-amaze-amaze banner",
+    },
+    "astro": {
+        img: imgAstro,
+        href: "https://astro.build/",
+        alt: "astro banner",
+    }, 
+    "blood-moon": {
+        img: imgBloodMoon,
+        href: "https://scryfall.com/card/2xm/118/blood-moon",
+        alt: "blood-moon banner",
+    }, 
+    "changeling": {
+        img: imgChangeling,
+        href: "https://scryfall.com/card/lrw/51/amoeboid-changeling",
+        alt: "changeling banner",
+    }, 
+    "css": {
+        img: imgCSS,
+        href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
+        alt: "css banner",
+    }, 
+    "gold": {
+        img: imgGold,
+        href: "https://finance.yahoo.com/quote/GLD/",
+        alt: "gold banner",
+    }, 
+    "in-response": {
+        img: imgInResponse,
+        href: "https://scryfall.com/card/f05/11/counterspell",
+        alt: "in-response banner",
+    }, 
+    "lemon": {
+        img: imgLemon,
+        href: "https://www.youtube.com/watch?v=SX_ViT4Ra7k",
+        alt: "lemon banner",
+    }, 
+    "maru": {
+        img: imgMaru,
+        href: "https://stardewvalleywiki.com/Maru",
+        alt: "maru banner",
+    },
+    "milkweed": {
+        img: imgMilkweed,
+        href: "https://monarchjointventure.org/",
+        alt: "milkweed banner",
+    },
+    "minionans": {
+        img: imgMinionans,
+        href: "https://en.wikipedia.org/wiki/Grass",
+        alt: "minionans banner",
+    },
+    "no-AI": {
+        img: imgNoAI,
+        href: "https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website",
+        alt: "no-ai banner", 
+    },
+    "peeper": {
+        img: imgPeeper,
+        href: "https://wiki.subnautica.com/sn/Peeper",
+        alt: "peeper banner",
+    },
+    "plastic-love": {
+        img: imgPlasticLove,
+        href: "https://www.youtube.com/watch?v=T_lC2O1oIew",
+        alt: "plastic-love banner",
+    },
+    "praat": {
+        img: imgPraat,
+        href: "https://www.fon.hum.uva.nl/praat/",
+        alt: "praat banner",
+    },
+    "vta": {
+        img: imgVTA,
+        href: "https://www.vta.org/",
+        alt: "vta banner",
+    },
+    "wug": {
+        img: imgWug,
+        href: "https://en.wiktionary.org/wiki/wug",
+        alt: "wug banner",
+    },
+    "www": {
+        img: imgWWW,
+        href: "https://info.cern.ch/hypertext/WWW/TheProject.html",
+        alt: "www banner",
+    },
+    default: {
+        img: imgPeeper,
+        href: "https://wiki.subnautica.com/sn/Peeper",
+        alt: "peeper banner", 
+    }
+    
+}
+---
+<a href={banners[key].href}>
+	<img src={banners[key].img.src} alt={banners[key].alt}>
+</a>
