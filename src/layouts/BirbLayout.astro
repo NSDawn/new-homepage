@@ -60,6 +60,7 @@ const { webpTitle, title } = Astro.props;
     }
     html {
 		--rgb-bg-birb: #0d050f;
+		--rgb-bg-card: #0d050f5a;
 		--rgb-bg-white: white;
 		--rgb-text-birb: #ffffff;
 		--rgb-a-birb: #f0ff9a;
@@ -94,6 +95,7 @@ const { webpTitle, title } = Astro.props;
             }
         }
         & .heading-wrapper {
+            background-color: var(--rgb-bg-card);
             margin-bottom: 1rem;
             display: flex;
             flex-direction: row;
@@ -132,6 +134,7 @@ const { webpTitle, title } = Astro.props;
             outline: 0.2rem dotted var(--rgb-text-birb) !important;
             border-radius: 1rem;
             padding: 1rem;
+            background-color: var(--rgb-bg-card);
             & img.portrait {
                 max-width: min(65vw, 800px);
                 max-height: 50vw; 
