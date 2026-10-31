@@ -30,10 +30,14 @@ import imgChantsOfSenaar from "../../public/assets/img/chants-of-senaar.png"
 import imgObraDinn from "../../public/assets/img/return-of-the-obra-dinn.webp"
 import imgForgottenCity from "../../public/assets/img/the-forgotten-city.jpg"
 import imgGhostTrick from "../../public/assets/img/ghost-trick.jpg"
+import { path } from '../utils/PathUtils.astro';
 const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgottenCity, imgGhostTrick];
 ---
 <HomeLayout>
 	<OsStyle />
+	<div class="corner-buttons-wrapper">
+		<LanguageDropdown />
+	</div>
 	<section class="title">
 		<h1>{t("home.h1")}</h1>
 	</section>
@@ -89,14 +93,14 @@ const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgot
 			</a>
 		</div>
 		<div class="sub-card-wrapper">
-			<div class="sub-card accent1 card1 collapsed">
-				<h3 onclick="toggleCollapsible('div.sub-card.card1')"><div class="indicator"></div><span>{t("home.web-dev.1.h")}</span></h3>
+			<div class="sub-card accent1 card1 collapsed" onclick="toggleCollapsible('div.sub-card.card1')">
+				<h3><div class="indicator"></div><span>{t("home.web-dev.1.h")}</span></h3>
 				<p class="collapsible">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit error autem nemo laborum perspiciatis velit natus nobis assumenda rem animi placeat odio vel voluptatum explicabo adipisci, repellendus, vitae expedita mollitia.
 				</p>
 			</div>
-			<div class="sub-card accent2 card2 collapsed">
-				<h3 onclick="toggleCollapsible('div.sub-card.card2')"><div class="indicator"></div><span>{t("home.web-dev.2.h")}</span></h3>
+			<div class="sub-card accent2 card2 collapsed" onclick="toggleCollapsible('div.sub-card.card2')">
+				<h3><div class="indicator"></div><span>{t("home.web-dev.2.h")}</span></h3>
 				<p class="collapsible">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit error autem nemo laborum perspiciatis velit natus nobis assumenda rem animi placeat odio vel voluptatum explicabo adipisci, repellendus, vitae expedita mollitia.
 				</p>
@@ -134,7 +138,7 @@ const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgot
         </ol>
 		<p>
             <img src={imgNoffle.src} alt="noffle icon">
-			<a href={l("/linguistics")}>
+			<a href={l(path("linguistics"))}>
 				{t("home.linguistics.go-to")}
 			</a>
 		</p>
@@ -218,6 +222,11 @@ section.title {
 	height: 90vh;
 	display: flex; align-items: center; justify-content: center;
 	animation: float 15s infinite linear;
+	
+}
+& .corner-buttons-wrapper {
+	position: static;
+	padding: 1rem;
 }
 section.business-card {
 	display: flex;
@@ -331,6 +340,7 @@ section.card {
 		--rgb-text-web-dev-accent1: #670000;
 		--rgb-text-web-dev-accent2: #03264c;
 		--rgb-h-web-dev: #000000;
+		--rgb-drop-shadow-web-dev: #00000033;
 		--rgb-a-web-dev: #f0ff9a;
 		--rgb-error-web-dev: #ff5132;
 		background-color: var(--rgb-bg-web-dev);
@@ -354,6 +364,7 @@ section.card {
 		}
 		& h2 { 
 			font-size: 3rem;
+			font-weight: 250;
 
 		}
 		& .sub-card-wrapper {
@@ -364,12 +375,20 @@ section.card {
 				flex: 1;
 				border-radius: 4rem;
 				overflow: hidden;
+				cursor: pointer;
+				transition: ease-in-out 0.25s;
+				box-shadow: 0.25rem 0.25rem var(--rgb-drop-shadow-web-dev);
+				&:hover {
+					transform: rotate(2.5deg) scale(1.05);
 				
+				}
+				&:hover:nth-child(2) {
+					transform: rotate(-2.5deg) scale(1.05);
+				}
 				& h3 {
 					margin: 2rem;
 					text-align: left;
 					font-size: 1.75rem;
-					cursor: pointer;
 					& div.indicator {
 						display: inline-block;
 						width: 1rem;
