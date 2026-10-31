@@ -188,7 +188,7 @@
 		"webp-title": "Nishant's Birbs",
 		"h": "Nishant's Birbs",
 		"birbs": {
-			"0": {
+			"20261006": {
 				"date": "2026/10/06",
 				"common-name": "American Herring Gull",  
 				"species": "Larus smithsonianus",  
@@ -197,7 +197,7 @@
 				"rarity": "🟢 Common",
 				"blurb": "This bird had attitude. The little guy seemed to have a desire to be photographed, hence I was able to get such up-close shot. I thought I'd never seen this bird before, but it seems that this bird simply looks starkly different as a juvenile, with brown patterned plumes instead of the normal solid white and gray. I suppose, I too am quite different from my juvenile self."
 			},
-			"1": {
+			"20261004": {
 				"date": "2026/10/04",
 				"common-name": "Canada Jay",  
 				"species": "Perisoreus canadensis",  
@@ -206,7 +206,7 @@
 				"rarity": "🟢 Common",
 				"blurb": "These birds were very bird-like in nature. They were numerous, and got up to all sorts of bird-like activities such as perching on things."
 			},
-			"2": {
+			"20260619": {
 				"date": "2026/06/19",
 				"common-name": "Steller's Jay", 
 				"species": "Cyanocitta stelleri (annectens?)",  
@@ -215,7 +215,25 @@
 				"rarity": "🟦 Uncommon",
 				"blurb": "There is something unsettlingly beautiful to me about blue birds. As always, they elude my attempts to photograph them. This was a lucky clearish picture among tens of attempts. Apparently, Steller's Jay has thirteen recognized subspecies, and by look this seems to be C. s. annectens, however this subspecies isn't known to live around Yosemite."
 			},
-			"3": {
+			"20250711": {
+				"date": "2025/07/11",
+				"common-name": "Rock Pigeon",  
+				"species": "Columba livia",  
+				"location": "Toronto, ON, Canada",
+				"tagline": "Chilling",
+				"rarity": "🟢 Common",
+				"blurb": "This pigeon reminded me of my cats. Seemingly so comfortable in such a terribly uncomfortable looking position."
+			},
+			"20250622": {
+				"date": "2025/06/22",
+				"common-name": "Greater Rhea",  
+				"species": "Rhea americana",  
+				"location": "Kaufmann, TX, US",
+				"tagline": "That's no bird, that's a dinosaur.",
+				"rarity": "🔶 Rare",
+				"blurb": "Greater Rhea are classified as near threatened in the wild, so it was a real treat to be able to see a family of them in captivity on a wildlife safari in Texas."
+			},
+			"20230804": {
 				"date": "2023/08/04",
 				"common-name": "Rock Pigeon",  
 				"species": "Columba livia",  
@@ -224,8 +242,8 @@
 				"rarity": "🟢 Common",
 				"blurb": "This pigeon called for a good picture. Unfortunately, I could not deliver, and this one will have to suffice. This is likely one of my favorite pigeons in my collection. This pigeon reminds us to be ourselves, and to find meaning in our own uniqueness. Strolling Manhattan, among many shades of people, it was equally heartwarming to see many shades of rock pigeons."
 			},
-			"4": {
-				"date": "2023/08/04",
+			"20221217": {
+				"date": "2022/12/17",
 				"common-name": "Mallard",  
 				"species": "Anas platyrhynchos",  
 				"location": "Aomori, AMR, Japan",
@@ -233,16 +251,16 @@
 				"rarity": "🟢 Common",
 				"blurb": "We were not sufficiently prepared for how cold Aomori was going to be. Shivering, we happened upon the same exact ducks that we see at home, A. platyrhynchos, in a snowed-over local shrine scouring small fish in the frigid water."
 			},
-			"5": {
-				"date": "2023/08/04",
+			"20220708": {
+				"date": "2022/07/08",
 				"common-name": "Rock Pigeon",  
 				"species": "Columba livia",  
 				"location": "Barcelona, CT, Spain",
 				"tagline": "Is that a shiny 🫪",
 				"rarity": "🟢 Common",
-				"blurb": "In my first trip to Europe, I bore witness to pigeons of shades I had never seen before. But this is my favorite. Looks exactly like the normal pattern of a rock pigeon, just sepia-shifted."
+				"blurb": "On my first trip to Europe, I saw pigeons of shades and patterns I had never seen before. Took so many pictures, but this is my favorite. Looks exactly like the normal pattern of a rock pigeon, just sepia-shifted."
 			},
-			"6": {
+			"20190824": {
 				"date": "2019/08/24",
 				"common-name": "Rock Pigeon",  
 				"species": "Columba livia",  

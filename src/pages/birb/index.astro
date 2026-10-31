@@ -5,18 +5,24 @@ import  { t } from "astro-i18n";
 import img20261006 from "../../../public/assets/img/birbs/20261006-american-herring-gull.png"
 import img20261004 from "../../../public/assets/img/birbs/20261004-canada-jay.png"
 import img20260619 from "../../../public/assets/img/birbs/20260619-stellers-jay.png"
+import img20250711 from "../../../public/assets/img/birbs/20250711-rock-dove.png"
+import img20250622 from "../../../public/assets/img/birbs/20250622-greater-rhea.png"
 import img20230804 from "../../../public/assets/img/birbs/20230804-rock-dove.png"
 import img20221217 from "../../../public/assets/img/birbs/20221217-mallard.png"
 import img20220708 from "../../../public/assets/img/birbs/20220708-rock-dove.png"
 import img20190824 from "../../../public/assets/img/birbs/20190824-rock-dove.png"
+
+
 const birdRecords: [string, ImageMetadata][] = [
-    ["0", img20261006],
-    ["1", img20261004],
-    ["2", img20260619],
-    ["3", img20230804],
-    ["4", img20221217],
-    ["5", img20220708],
-    ["6", img20190824],
+    ["20261006", img20261006],
+    ["20261004", img20261004],
+    ["20260619", img20260619],
+    ["20250711", img20250711],
+    ["20250622", img20250622],
+    ["20230804", img20230804],
+    ["20221217", img20221217],
+    ["20220708", img20220708],
+    ["20190824", img20190824],
 ]
 ---
 
@@ -28,7 +34,7 @@ const birdRecords: [string, ImageMetadata][] = [
         <div class="date">{t(`birb.birbs.${id}.date`)}</div>
         <h2>{t(`birb.birbs.${id}.common-name`)}</h2>
         <h3>🪪 {t(`birb.birbs.${id}.species`)}, 📍 {t(`birb.birbs.${id}.location`)}</h3>
-        <img class="portrait" src={img.src} alt={t(`birb.birbs.${id}.common-name`)}>
+        <img loading="lazy" class="portrait" src={img.src} alt={t(`birb.birbs.${id}.common-name`)}>
         <h3>{t(`birb.birbs.${id}.tagline`)}</h3>
         <h3>{t(`birb.birbs.${id}.rarity`)}</h3>
         <p>{t(`birb.birbs.${id}.blurb`)}</p>
