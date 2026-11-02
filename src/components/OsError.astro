@@ -24,10 +24,12 @@ import imgXIcon from "../../public/assets/img/icons/x.svg";
             <div>
         </div>
         <div class="buttons">
-            {buttonTexts.map((buttonText, i) => 
-                <button class="button-style" onclick={buttonEffects[i]}>
+            {buttonTexts.map((buttonText, i) =>
+            
+                <button class={`button-style ${!buttonEffects[i] ? "disabled": ""}`} onclick={buttonEffects[i]}>
                     {buttonText}
                 </button>
+                
             )}
         </div>
     </div>
@@ -36,6 +38,7 @@ import imgXIcon from "../../public/assets/img/icons/x.svg";
     
     .os-style {
         --rgb-os-bg: #e3e3e3;
+        --rgb-os-bg-hover: #c6abca;
         --rgb-os-bg-highlight: #ffffff;
         --rgb-os-bg-shadow: #747575;
         --rgb-os-accent: #7500f3;
@@ -53,6 +56,10 @@ import imgXIcon from "../../public/assets/img/icons/x.svg";
         & .button-style {
             background-color: var(--rgb-os-bg);
             border:  var(--os-border-width) var(--rgb-os-bg-highlight) outset;
+            cursor: pointer;
+            &:hover:not(.disabled) {
+                transform: scale(1.05);
+            }
             &.disabled {
                 background-color: var(--rgb-os-bg);
                 border:  var(--os-border-width) var(--rgb-os-bg-highlight) inset;
@@ -124,3 +131,8 @@ import imgXIcon from "../../public/assets/img/icons/x.svg";
         
     }
 </style>
+<script is:inline>
+    function goTo(s) {
+        window.location.href += s;
+    }
+</script>

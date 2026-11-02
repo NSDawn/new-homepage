@@ -10,7 +10,7 @@ import LanguageDropdown from '../components/LanguageDropdown.astro';
 import { formatShortDate } from '../lib/locale'
 import Banner from '../components/Banner.astro';
 
-
+import imgHello from "../../public/assets/img/chalkboard.gif";
 import imgHandMouse from "../../public/assets/img/handmouse.gif";
 import imgAkatsukiIcon from "../../public/assets/img/icons/akatsuki-brightened.png";
 import imgQuestion from "../../public/assets/img/question.gif";
@@ -68,11 +68,11 @@ const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgot
 					</ul>
 				</div>
 			</div>
-			<LanguageDropdown />
-			<div class="keep-scrolling">
-				<img src={imgHandMouse.src} alt="keep-scrolling">
-				<div>{t("home.intro.keep-scrolling")}</div>
-			</div>
+			<img src={imgHello.src} alt="hello">
+		</div>
+		<div class="keep-scrolling">
+			<img src={imgHandMouse.src} alt="keep-scrolling">
+			<div>{t("home.intro.keep-scrolling")}</div>
 		</div>
 	</section>
 	<section class="card web-dev">
@@ -146,15 +146,7 @@ const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgot
 	<section class="business-card">
 		<BusinessCard />
 	</section>
-	<section class="os-error">
-		<OsError 
-			title={t("home.os-error.h")} 
-			blurb={t("home.os-error.p")} 
-			imgSrc={imgQuestion.src}
-			buttonTexts={[t("home.os-error.button1"), t("home.os-error.button2")]}
-			buttonEffects={[null, null]}
-		/>
-	</section>
+	
 	<section class="card game-dev">
 		<div class="banners">
 			<Banner key="changeling"/>
@@ -178,6 +170,15 @@ const coolGameImages = [imgBluePrince, imgChantsOfSenaar, imgObraDinn, imgForgot
 		</div>
 	</section>
 	<section class="card weird-bit">
+		<div class="os-error">
+			<OsError 
+				title={t("home.os-error.h")} 
+				blurb={t("home.os-error.p")} 
+				imgSrc={imgQuestion.src}
+				buttonTexts={[t("home.os-error.button1"), t("home.os-error.button2")]}
+				buttonEffects={["goTo('./birb')", null]}
+			/>
+		</div>
 		<h1>無我夢中</h1>
 		<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/4PjAnMjrztwRf9mcwNJw4Q?utm_source=generator&si=321cc69bbd8e4c13" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum modi alias non laudantium esse dolore voluptatem minus dolorum repellendus veritatis magnam fugiat nihil amet sapiente voluptatibus eaque, facilis, enim ab.</p>
@@ -232,9 +233,16 @@ section.business-card {
 	display: flex;
 	align-items: center; justify-content: center;
 }
-section.os-error {
+div.os-error {
+	position: relative;
+	text-shadow: none;
+	right: 1rem;
+	transform: rotate(15deg);
 	display: flex;
 	align-items: center; justify-content: center;
+	& > div {
+		width: 24rem;
+	}
 }
 div.banners {
 	display: flex;
@@ -254,6 +262,15 @@ section.card {
 		margin: 1rem 0;
 	}
 	&.intro {
+		--rgb-intro-bg: #000000;
+		--rgb-intro-accent: #494949;
+		--rgb-intro-text: #ffebc2;
+		background-color: var(--rgb-intro-bg);
+		background-image: url(../../public/assets/img/katytora.png);
+		display: flex; 
+		flex-direction:column;
+		align-items: center; justify-content: center;
+		background-size: 10%;
 		& div.intro-wrapper {
 			display: flex; 
 			margin: 1rem 0;
@@ -261,7 +278,12 @@ section.card {
 			flex-wrap: wrap;
 			align-items: center; justify-content: center;
 			gap: 1rem;
+			color: var(--rgb-intro-text);
+			
 			& div.blurb {
+				outline: 0.25rem solid var(--rgb-intro-text);
+				background: var(--rgb-intro-accent);
+				padding:1rem;
 				max-width: 40rem;
 				& div.quick-links {
 					& h3 {
@@ -289,15 +311,14 @@ section.card {
 					}
 				}
 			}
-			& div.keep-scrolling {
-				align-self: end;
-				display:flex; 
-				flex-direction: row; 
-				gap: 1rem; align-items: center; justify-content: left;
+		}
+		& div.keep-scrolling {
+			display: flex; 
+			flex-direction: column;
+				align-items: center; justify-content: center;
 
-				& img {
-					width: 4rem;
-				}
+			& img {
+				width: 4rem;
 			}
 		}
 	}
